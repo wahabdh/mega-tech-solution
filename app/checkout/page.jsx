@@ -65,24 +65,25 @@ export default function CheckoutPage() {
 
     try {
       const orderData = {
-        ...formData,
-        items: items.map(item => ({
-          name: item.name,
-          price: item.price,
-          quantity: item.quantity,
-          total: item.price * item.quantity
-        })),
-        subtotal,
-        orderDate: new Date().toLocaleString("en-PK", {
-  timeZone: "Asia/Karachi",
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
-  hour12: true
-      }
+  ...formData,
+  items: items.map((item) => ({
+    name: item.name,
+    price: item.price,
+    quantity: item.quantity,
+    total: item.price * item.quantity,
+  })),
+  subtotal,
+  orderDate: new Date().toLocaleString("en-PK", {
+    timeZone: "Asia/Karachi",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  }),
+}
 
       const response = await fetch("/api/submit-order", {
         method: "POST",

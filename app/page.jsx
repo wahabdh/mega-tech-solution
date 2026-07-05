@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { SliderSection } from "@/components/home/slider-section"
 import { HeroSection } from "@/components/home/hero-section"
 import { ProductsSection } from "@/components/home/products-section"
 import { FeaturesSection } from "@/components/home/features-section"
@@ -10,6 +11,7 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
+        <SliderSection />
         <HeroSection />
         <ProductsSection />
         <FeaturesSection />

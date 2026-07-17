@@ -52,29 +52,32 @@ export function SliderSection() {
           <div className="absolute inset-0 bg-black/60" />
 
           {/* Content */}
-          <div className="relative z-10 flex items-center h-full">
-            <div className="container mx-auto px-6 lg:px-16 max-w-3xl text-white">
+          <div className="relative z-10 flex h-full items-center">
+            <div className="container mx-auto max-w-3xl px-6 lg:px-16 text-white">
 
+              {/* Badge */}
               {product.badge && (
-                <Badge className="mb-6 bg-blue-600 text-white px-4 py-2 text-sm">
+                <Badge className="mb-6 bg-blue-600 px-4 py-2 text-sm text-white">
                   {product.badge}
                 </Badge>
               )}
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+              {/* Product Name */}
+              <h1 className="mb-6 text-5xl font-extrabold leading-tight md:text-6xl lg:text-7xl">
                 {product.name}
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-200 mb-8">
+              {/* Description */}
+              <p className="mb-8 text-lg text-gray-200 md:text-xl">
                 {product.description}
               </p>
 
               {/* Specs */}
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="mb-8 flex flex-wrap gap-3">
                 {product.specs.map((spec, idx) => (
                   <span
                     key={idx}
-                    className="rounded-full bg-white/20 backdrop-blur-md px-4 py-2 text-sm"
+                    className="rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-md"
                   >
                     {spec}
                   </span>
@@ -82,7 +85,7 @@ export function SliderSection() {
               </div>
 
               {/* Rating */}
-              <div className="flex items-center gap-3 mb-8">
+              <div className="mb-8 flex items-center gap-3">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -99,14 +102,17 @@ export function SliderSection() {
 
               {/* Price */}
               <div className="flex items-center gap-4">
-                <span className="text-4xl md:text-5xl font-bold text-cyan-400">
-                  Rs. {product.price}
+                <span className="text-4xl font-bold text-cyan-400 md:text-5xl">
+                  Rs. {product.price.toLocaleString("en-PK")}
                 </span>
 
-                <span className="text-2xl text-gray-300 line-through">
-                  Rs. {product.originalPrice}
-                </span>
+                {product.originalPrice > product.price && (
+                  <span className="text-2xl text-gray-300 line-through">
+                    Rs. {product.originalPrice.toLocaleString("en-PK")}
+                  </span>
+                )}
               </div>
+
             </div>
           </div>
         </div>
@@ -116,6 +122,7 @@ export function SliderSection() {
       <button
         onClick={goToPrevious}
         className="absolute left-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-md transition hover:bg-blue-600"
+        aria-label="Previous Slide"
       >
         <ChevronLeft className="h-7 w-7" />
       </button>
@@ -124,6 +131,7 @@ export function SliderSection() {
       <button
         onClick={goToNext}
         className="absolute right-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-md transition hover:bg-blue-600"
+        aria-label="Next Slide"
       >
         <ChevronRight className="h-7 w-7" />
       </button>
@@ -139,6 +147,7 @@ export function SliderSection() {
                 ? "h-3 w-10 rounded-full bg-blue-500"
                 : "h-3 w-3 rounded-full bg-white/50 hover:bg-white"
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

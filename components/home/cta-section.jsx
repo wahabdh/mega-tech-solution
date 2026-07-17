@@ -15,7 +15,7 @@ export function CTASection() {
               Ready to Upgrade Your Tech?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
-              Join over 5,000 satisfied customers who trust MegaTech Solution for their computing needs. Get expert advice and premium products today.
+              Join over 5K satisfied customers who trust MegaTech Solution for their computing needs. Get expert advice and premium products today.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button size="lg" variant="secondary" asChild className="gap-2">

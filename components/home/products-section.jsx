@@ -84,9 +84,13 @@ export function ProductsSection() {
                 <h3 className="mt-2 font-semibold text-foreground line-clamp-1">{product.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{product.description}</p>
                 <div className="mt-3 flex items-center gap-2">
-                  <span className="text-lg font-bold text-foreground">Rs. {product.price}</span>
+                  <span className="text-lg font-bold text-foreground">
+  Rs. {product.price.toLocaleString("en-PK")}
+</span>
                   {product.originalPrice > product.price && (
-                    <span className="text-sm text-muted-foreground line-through">Rs. {product.originalPrice}</span>
+                    <span className="text-sm text-muted-foreground line-through">
+  Rs. {product.originalPrice.toLocaleString("en-PK")}
+</span>
                   )}
                 </div>
               </CardContent>

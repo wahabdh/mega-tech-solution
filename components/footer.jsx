@@ -75,7 +75,7 @@ export function Footer() {
           <Link href="/" className="flex items-center gap-4">
 
  <Image
-  src="/images/logo.jpg"
+  src="/images/logo.png"
   width={90}
   height={90}
   className="h-auto w-auto max-h-20 object-contain"

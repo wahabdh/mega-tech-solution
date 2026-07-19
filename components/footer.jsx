@@ -22,7 +22,7 @@ const footerLinks = {
     { name: "About Us", href: "/contact" },
     { name: "Our Services", href: "/services" },
     { name: "Contact", href: "/contact" },
-    { name: "Home", href: "/Home" },
+    { name: "Home", href: "/home" },
   ],
   support: [
     { name: "Help Center", href: "/contact" },

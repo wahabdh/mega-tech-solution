@@ -1,6 +1,6 @@
+import Image from "next/image"
 import Link from "next/link"
 import {
-  Monitor,
   Mail,
   Phone,
   MapPin,
@@ -72,18 +72,31 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
 
-            <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-4">
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/30">
-                <Monitor className="h-6 w-6 text-white" />
-              </div>
+  <Image
+    src="/images/logo.jpg"
+    alt="MegaTech Solution"
+    width={65}
+    height={65}
+    className="rounded-full object-cover"
+    priority
+  />
 
-              <span className="text-2xl font-extrabold tracking-wide text-white">
-                MegaTech
-                <span className="text-cyan-400">Solution</span>
-              </span>
+  <div>
 
-            </Link>
+    <h2 className="text-2xl font-extrabold tracking-wide text-white">
+      MegaTech
+      <span className="text-cyan-400">Solution</span>
+    </h2>
+
+    <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+      Premium IT Solutions
+    </p>
+
+  </div>
+
+</Link>
 
             <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-400">
               Your trusted partner for premium computer accessories,

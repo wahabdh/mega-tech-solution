@@ -51,15 +51,13 @@ export function HeroSection() {
               Latest Gaming PCs & Premium Accessories
             </div>
 
-            {/* Heading */}
-            <h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-5xl">
-              Powering
-              <br />
-              Your Digital
-              <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Future
-              </span>
-            </h1>
+          {/* Heading */}
+<h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-6xl">
+  Powering Your Digital{" "}
+  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+    Future
+  </span>
+</h1>
 
             {/* Description */}
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">

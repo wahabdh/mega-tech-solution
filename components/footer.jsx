@@ -74,14 +74,14 @@ export function Footer() {
 
           <Link href="/" className="flex items-center gap-4">
 
-  <Image
-    src="/images/logo.jpg"
-    alt="MegaTech Solution"
-    width={50}
-    height={50}
-    className="rounded-full object-cover"
-    priority
-  />
+ <Image
+  src="/images/logo.jpg"
+  alt="MegaTech Solution"
+  width={90}
+  height={90}
+  className="h-auto w-auto max-h-20 object-contain"
+  priority
+/>
 
   <div>
 

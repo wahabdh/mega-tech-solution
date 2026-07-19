@@ -43,7 +43,7 @@ const categories = baseCategories.map(cat => ({
 }))
 
 const benefits = [
-  { icon: Truck, title: "Free Shipping", description: "On orders over Rs. 50" },
+  { icon: Truck, title: "Free Shipping", description: "On orders over Rs. 2000" },
   { icon: Shield, title: "2-Year Warranty", description: "Extended protection" },
   { icon: RefreshCw, title: "30-Day Returns", description: "Hassle-free returns" },
   { icon: Headphones, title: "24/7 Support", description: "Expert assistance" },

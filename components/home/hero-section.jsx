@@ -52,7 +52,7 @@ export function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-5xl">
               Powering
               <br />
               Your Digital

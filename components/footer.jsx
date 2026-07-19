@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { Monitor, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import {
+  Monitor,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react"
 
 const footerLinks = {
   products: [
@@ -24,117 +33,184 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/megatechsolution1348" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/megatechsolution1348/?hl=en" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    href: "https://www.facebook.com/megatechsolution1348",
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    href: "#",
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/megatechsolution1348/?hl=en",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "#",
+  },
 ]
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary/50">
-      <div className="container mx-auto px-4 py-12 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="relative overflow-hidden border-t border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-black text-slate-300">
+
+      {/* Background Glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"></div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6 py-16 lg:px-8">
+
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <Monitor className="h-5 w-5 text-primary-foreground" />
+
+            <Link href="/" className="flex items-center gap-3">
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/30">
+                <Monitor className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-foreground">
-                MegaTech<span className="text-primary">Solution</span>
+
+              <span className="text-2xl font-extrabold tracking-wide text-white">
+                MegaTech
+                <span className="text-cyan-400">Solution</span>
               </span>
+
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              Your trusted partner for premium computer accessories, gaming PCs, and laptops. Quality tech solutions since 2018.
+
+            <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-400">
+              Your trusted partner for premium computer accessories,
+              gaming PCs, laptops, and enterprise IT solutions.
+              Delivering quality technology products and exceptional
+              customer service since 2018.
             </p>
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>office No 3 Ameer Mall New City Phase 2 , Wah, Pakistan, 47010</span>
+
+            <div className="mt-8 space-y-4">
+
+              <div className="flex items-start gap-3 text-sm text-slate-400">
+                <MapPin className="mt-1 h-5 w-5 text-cyan-400" />
+                <span>
+                  Office No. 3, Ameer Mall,
+                  New City Phase-II,
+                  Wah Cantt, Pakistan 47010
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
+
+              <div className="flex items-center gap-3 text-sm text-slate-400">
+                <Phone className="h-5 w-5 text-cyan-400" />
                 <span>+92 0306-9293923</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
+
+              <div className="flex items-center gap-3 text-sm text-slate-400">
+                <Mail className="h-5 w-5 text-cyan-400" />
                 <span>megatechsolution1348@hotmail.com</span>
               </div>
+
             </div>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-foreground">Products</h3>
-            <ul className="mt-4 space-y-3">
+
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+              Products
+            </h3>
+
+            <ul className="space-y-4">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-foreground">Company</h3>
-            <ul className="mt-4 space-y-3">
+
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+              Company
+            </h3>
+
+            <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
           </div>
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold text-foreground">Support</h3>
-            <ul className="mt-4 space-y-3">
+
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+              Support
+            </h3>
+
+            <ul className="space-y-4">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
           </div>
+
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © 2026 MegaTech Solution. All rights reserved.
+
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-8 md:flex-row">
+
+          <p className="text-sm tracking-wide text-slate-500">
+            © 2026 MegaTech Solution. All Rights Reserved.
           </p>
+
           <div className="flex items-center gap-4">
+
             {socialLinks.map((social) => (
               <Link
                 key={social.name}
                 href={social.href}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-800/60 text-slate-400 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-cyan-500 hover:text-white hover:shadow-lg hover:shadow-cyan-500/40"
               >
-                <social.icon className="h-4 w-4" />
+                <social.icon className="h-5 w-5" />
                 <span className="sr-only">{social.name}</span>
               </Link>
             ))}
+
           </div>
+
         </div>
+
       </div>
+
     </footer>
   )
 }

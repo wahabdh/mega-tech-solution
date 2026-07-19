@@ -77,8 +77,8 @@ export function Footer() {
   <Image
     src="/images/logo.jpg"
     alt="MegaTech Solution"
-    width={65}
-    height={65}
+    width={50}
+    height={50}
     className="rounded-full object-cover"
     priority
   />

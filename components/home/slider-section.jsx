@@ -53,7 +53,8 @@ export function SliderSection() {
 
           {/* Content */}
           <div className="relative z-10 flex h-full items-center">
-            <div className="container mx-auto max-w-3xl px-6 lg:px-16 text-white">
+          <div className="container mx-auto px-6 lg:px-16">
+          <div className="max-w-xl text-left text-white">
 
               {/* Badge */}
               {product.badge && (
@@ -82,7 +83,9 @@ export function SliderSection() {
                     {spec}
                   </span>
                 ))}
-              </div>
+                </div>
+            </div>
+          </div>
 
               {/* Rating */}
               <div className="mb-8 flex items-center gap-3">

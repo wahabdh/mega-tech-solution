@@ -76,7 +76,6 @@ export function Footer() {
 
  <Image
   src="/images/logo.jpg"
-  alt="MegaTech Solution"
   width={90}
   height={90}
   className="h-auto w-auto max-h-20 object-contain"

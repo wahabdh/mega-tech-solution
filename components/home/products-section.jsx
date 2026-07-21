@@ -75,49 +75,45 @@ export function ProductsSection() {
                   </Badge>
                 )}
               </div>
-
-              {/* Content wrapper — invisible at rest, fades + slides into view on hover */}
-              <div className="opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <span className="font-medium text-foreground">{product.rating}</span>
-                    <span>({product.reviews} reviews)</span>
-                  </div>
-                  <h3 className="mt-2 font-semibold text-foreground line-clamp-1">{product.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{product.description}</p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <span className="text-lg font-bold text-foreground">
-                      Rs. {product.price.toLocaleString("en-PK")}
-                    </span>
-                    {product.originalPrice > product.price && (
-                      <span className="text-sm text-muted-foreground line-through">
-                        Rs. {product.originalPrice.toLocaleString("en-PK")}
-                      </span>
-                    )}
-                  </div>
-                </CardContent>
-                <CardFooter className="p-4 pt-0">
-                  <Button 
-                    className="w-full gap-2" 
-                    size="sm"
-                    variant={isInCart(product.id) ? "secondary" : "default"}
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    {isInCart(product.id) ? (
-                      <>
-                        <Check className="h-4 w-4" />
-                        Add More
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingCart className="h-4 w-4" />
-                        Add to Cart
-                      </>
-                    )}
-                  </Button>
-                </CardFooter>
-              </div>
+              <CardContent className="p-4">
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span className="font-medium text-foreground">{product.rating}</span>
+                  <span>({product.reviews} reviews)</span>
+                </div>
+                <h3 className="mt-2 font-semibold text-foreground line-clamp-1">{product.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{product.description}</p>
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="text-lg font-bold text-foreground">
+  Rs. {product.price.toLocaleString("en-PK")}
+</span>
+                  {product.originalPrice > product.price && (
+                    <span className="text-sm text-muted-foreground line-through">
+  Rs. {product.originalPrice.toLocaleString("en-PK")}
+</span>
+                  )}
+                </div>
+              </CardContent>
+              <CardFooter className="p-4 pt-0">
+                <Button 
+                  className="w-full gap-2" 
+                  size="sm"
+                  variant={isInCart(product.id) ? "secondary" : "default"}
+                  onClick={() => handleAddToCart(product)}
+                >
+                  {isInCart(product.id) ? (
+                    <>
+                      <Check className="h-4 w-4" />
+                      Add More
+                    </>
+                  ) : (
+                    <>
+                      <ShoppingCart className="h-4 w-4" />
+                      Add to Cart
+                    </>
+                  )}
+                </Button>
+              </CardFooter>
             </Card>
           ))}
         </div>

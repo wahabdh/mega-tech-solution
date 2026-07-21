@@ -152,21 +152,7 @@ export function SliderSection() {
                   )}
 
                 </div>
-                                {/* Optional Buttons */}
-
-                <div className="mt-10 flex flex-wrap gap-4">
-
-                  <button className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-cyan-600 hover:shadow-xl hover:shadow-cyan-500/40">
-                    Shop Now
-                  </button>
-
-                  <button className="rounded-xl border border-white/30 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-slate-900">
-                    Learn More
-                  </button>
-
                 </div>
-
-              </div>
 
             </div>
 

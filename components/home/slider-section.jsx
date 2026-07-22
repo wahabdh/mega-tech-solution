@@ -1,124 +1,87 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { useState, useEffect } from "react"
+import { ArrowRight } from "lucide-react"
 import { products } from "@/lib/products-data"
 
 export function SliderSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState<"next" | "prev">("next")
+  const [progressKey, setProgressKey] = useState(0)
   const sliderProducts = products.slice(0, 3)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Optional per-slide eyebrow labels — edit these to whatever fits your products/categories
+  const eyebrows = ["our company", "our approach", "view more"]
 
   useEffect(() => {
-    timeoutRef.current = setInterval(() => {
-      setDirection("next")
+    const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % sliderProducts.length)
+      setProgressKey((k) => k + 1)
     }, 5000)
 
-    return () => {
-      if (timeoutRef.current) clearInterval(timeoutRef.current)
-    }
+    return () => clearInterval(interval)
   }, [sliderProducts.length])
 
-  const goToPrevious = () => {
-    setDirection("prev")
-    setCurrentIndex((prev) => (prev === 0 ? sliderProducts.length - 1 : prev - 1))
-  }
-
-  const goToNext = () => {
-    setDirection("next")
-    setCurrentIndex((prev) => (prev + 1) % sliderProducts.length)
-  }
-
   const goToSlide = (index: number) => {
-    setDirection(index > currentIndex ? "next" : "prev")
     setCurrentIndex(index)
+    setProgressKey((k) => k + 1)
   }
-
-  // Alternate transition "style" per slide index so they don't all look the same
-  const transitionStyles = ["zoom", "slide-right", "slide-left"]
 
   return (
     <section className="relative h-screen overflow-hidden bg-black">
       <style jsx>{`
-        @keyframes kenburns {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.12); }
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
         }
-        @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(24px); }
+        .progress-bar-active {
+          animation: progress 5s linear forwards;
+        }
+        @keyframes fadeSlide {
+          0% { opacity: 0; transform: translateY(16px); }
           100% { opacity: 1; transform: translateY(0); }
         }
-        .kenburns-active {
-          animation: kenburns 6s ease-out forwards;
-        }
-        .fade-up-item {
+        .fade-slide-item {
           opacity: 0;
-          animation: fadeUp 0.7s ease-out forwards;
+          animation: fadeSlide 0.6s ease-out forwards;
         }
       `}</style>
 
       {sliderProducts.map((product, index) => {
         const isActive = index === currentIndex
-        const style = transitionStyles[index % transitionStyles.length]
-
-        // Determine transform/opacity per slide based on its own style + active state
-        let slideClasses = "absolute inset-0 transition-all ease-out"
-        if (style === "zoom") {
-          slideClasses += isActive
-            ? " opacity-100 scale-100 duration-1000 z-10"
-            : " opacity-0 scale-110 duration-1000 pointer-events-none"
-        } else if (style === "slide-right") {
-          slideClasses += isActive
-            ? " opacity-100 translate-x-0 duration-700 z-10"
-            : direction === "next"
-              ? " opacity-0 translate-x-full duration-700 pointer-events-none"
-              : " opacity-0 -translate-x-full duration-700 pointer-events-none"
-        } else {
-          // slide-left
-          slideClasses += isActive
-            ? " opacity-100 translate-x-0 duration-700 z-10"
-            : direction === "next"
-              ? " opacity-0 -translate-x-full duration-700 pointer-events-none"
-              : " opacity-0 translate-x-full duration-700 pointer-events-none"
-        }
-
         return (
-          <div key={product.id} className={slideClasses}>
-            {/* Background Image with Ken Burns zoom while active */}
-            <div className="absolute inset-0 overflow-hidden">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                priority={isActive}
-                className={`object-cover ${isActive ? "kenburns-active" : ""}`}
-              />
-            </div>
+          <div
+            key={product.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              isActive ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            {/* Background Image */}
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              priority={isActive}
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/55" />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60" />
-
-            {/* Content */}
+            {/* Content — left aligned, minimal */}
             <div className="relative z-10 flex h-full items-center">
               <div className="w-full max-w-7xl mx-auto px-8 lg:px-20">
-                <div className="max-w-xl">
-                  {/* Badge */}
-                  {product.badge && (
-                    <Badge
-                      className="mb-6 bg-cyan-500 px-5 py-2 text-white fade-up-item"
-                      style={{ animationDelay: isActive ? "0.1s" : "0s" }}
-                    >
-                      {product.badge}
-                    </Badge>
-                  )}
+                <div className="max-w-2xl">
 
-                  {/* Product Name */}
+                  {/* Eyebrow label */}
+                  <span
+                    className="fade-slide-item mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
+                    style={{ animationDelay: isActive ? "0.1s" : "0s" }}
+                  >
+                    {eyebrows[index % eyebrows.length]}
+                  </span>
+
+                  {/* Headline */}
                   <h1
-                    className="mb-6 text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl fade-up-item"
+                    className="fade-slide-item mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
                     style={{ animationDelay: isActive ? "0.2s" : "0s" }}
                   >
                     {product.name}
@@ -126,56 +89,24 @@ export function SliderSection() {
 
                   {/* Description */}
                   <p
-                    className="mb-8 text-lg leading-8 text-gray-200 fade-up-item"
+                    className="fade-slide-item mb-8 max-w-lg text-base leading-7 text-gray-200 md:text-lg"
                     style={{ animationDelay: isActive ? "0.3s" : "0s" }}
                   >
                     {product.description}
                   </p>
 
-                  {/* Specs */}
-                  <div
-                    className="mb-8 flex flex-wrap gap-3 fade-up-item"
+                  {/* CTA — text link with animated arrow, not a filled button */}
+                  
+                    href={`/products/${product.id}`}
+                    className="fade-slide-item group inline-flex items-center gap-2 text-base font-semibold uppercase tracking-wide text-white"
                     style={{ animationDelay: isActive ? "0.4s" : "0s" }}
                   >
-                    {product.specs.map((spec, idx) => (
-                      <span
-                        key={idx}
-                        className="rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-md"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Rating */}
-                  <div
-                    className="mb-8 flex items-center gap-3 fade-up-item"
-                    style={{ animationDelay: isActive ? "0.5s" : "0s" }}
-                  >
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <span className="text-gray-200">
-                      {product.rating} ({product.reviews} Reviews)
+                    <span className="border-b-2 border-cyan-400 pb-1 transition-colors group-hover:border-white">
+                      View Details
                     </span>
-                  </div>
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
 
-                  {/* Price */}
-                  <div
-                    className="flex items-center gap-4 fade-up-item"
-                    style={{ animationDelay: isActive ? "0.6s" : "0s" }}
-                  >
-                    <span className="text-4xl font-bold text-cyan-400 lg:text-5xl">
-                      Rs. {product.price.toLocaleString("en-PK")}
-                    </span>
-                    {product.originalPrice > product.price && (
-                      <span className="text-2xl text-gray-300 line-through">
-                        Rs. {product.originalPrice.toLocaleString("en-PK")}
-                      </span>
-                    )}
-                  </div>
                 </div>
               </div>
             </div>
@@ -183,37 +114,22 @@ export function SliderSection() {
         )
       })}
 
-      {/* Previous Button */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-md transition-all duration-300 hover:bg-cyan-500"
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft className="h-7 w-7" />
-      </button>
-
-      {/* Next Button */}
-      <button
-        onClick={goToNext}
-        className="absolute right-6 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-md transition-all duration-300 hover:bg-cyan-500"
-        aria-label="Next Slide"
-      >
-        <ChevronRight className="h-7 w-7" />
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+      {/* Slim progress-bar navigation, bottom-left, replacing dots */}
+      <div className="absolute bottom-10 left-8 z-20 flex gap-3 lg:left-20">
         {sliderProducts.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 ${
-              index === currentIndex
-                ? "h-3 w-10 rounded-full bg-cyan-500"
-                : "h-3 w-3 rounded-full bg-white/50 hover:bg-white"
-            }`}
+            className="relative h-[3px] w-16 overflow-hidden rounded-full bg-white/30"
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            {index === currentIndex && (
+              <span
+                key={progressKey}
+                className="progress-bar-active absolute inset-y-0 left-0 block bg-cyan-400"
+              />
+            )}
+          </button>
         ))}
       </div>
     </section>

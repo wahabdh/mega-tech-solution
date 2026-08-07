@@ -25,7 +25,7 @@ export function CTASection() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="gap-2 border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                <Link href="tel:03069293923">
+                <Link href="tel:03104601236">
                   <Phone className="h-4 w-4" />
                   Call Us Now
                 </Link>

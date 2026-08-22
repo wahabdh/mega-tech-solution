@@ -69,7 +69,7 @@ const teamMembers = [
   {
     name: "CEO Name",
     designation: "Chief Executive Officer",
-    image: "/images/team/ceo.jpg",
+    image: "/images/ceo.jpg",
     experience:
       "Leading MegaTech Solution with a strong vision for technology, innovation, and customer-focused solutions. With years of professional experience, the CEO focuses on building long-term relationships and delivering reliable technology services.",
     featured: true,

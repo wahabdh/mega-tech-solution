@@ -69,7 +69,7 @@ const teamMembers = [
   {
     id: 1,
     name: "CEO Name",
-    designation: "CHIEF EXECUTIVE OFFICER",
+    designation: "Chief Executive Officer",
     category: "Leadership",
     image: "/images/ceo.jpg",
     experience:
@@ -78,7 +78,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Staff Member 1",
-    designation: "TECHNICAL DIRECTOR",
+    designation: "Technical Director",
     category: "Development",
     image: "/images/ceo.jpg",
     experience:
@@ -87,7 +87,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Staff Member 2",
-    designation: "CLIENT SERVICES DIRECTOR",
+    designation: "Client Services Director",
     category: "Client Services",
     image: "/images/ceo.jpg",
     experience:
@@ -96,7 +96,7 @@ const teamMembers = [
   {
     id: 4,
     name: "Staff Member 3",
-    designation: "SALES & MARKETING MANAGER",
+    designation: "Sales & Marketing Manager",
     category: "Marketing & Sales",
     image: "/images/ceo.jpg",
     experience:
@@ -105,7 +105,7 @@ const teamMembers = [
   {
     id: 5,
     name: "Staff Member 4",
-    designation: "IT SYSTEMS SPECIALIST",
+    designation: "IT Systems Specialist",
     category: "Development",
     image: "/images/ceo.jpg",
     experience:
@@ -233,7 +233,7 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <a
+                
                   href="#contact-form"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
                 >
@@ -241,7 +241,7 @@ export default function ContactPage() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
 
-                <a
+                
                   href="#our-team"
                   className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
                 >
@@ -306,7 +306,7 @@ export default function ContactPage() {
 
 
         {/* =====================================================
-            MEET OUR TEAM
+            MEET OUR TEAM — professional uniform grid
         ====================================================== */}
 
         <section
@@ -316,7 +316,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 lg:px-8">
 
             {/* Section heading */}
-            <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mx-auto mb-14 max-w-3xl text-center">
 
               <Badge
                 variant="secondary"
@@ -338,156 +338,74 @@ export default function ContactPage() {
 
             </div>
 
+            {/* Team grid */}
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-            {/* CEO Featured Card */}
-            {teamMembers
-              .filter((member) => member.featured)
-              .map((member) => (
+              {teamMembers.map((member) => (
                 <Card
-                  key={member.name}
-                  className="group mb-10 overflow-hidden border-border/70 bg-gradient-to-br from-card via-card to-primary/5 shadow-xl"
+                  key={member.id}
+                  className="group overflow-hidden border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-primary/30"
                 >
-                  <div className="grid items-center lg:grid-cols-[360px_1fr]">
 
-                    {/* CEO Image */}
-                    <div className="relative h-[360px] overflow-hidden bg-muted sm:h-[420px] lg:h-[380px]">
+                  {/* Photo */}
+                  <div className="relative aspect-[4/5] overflow-hidden bg-muted">
 
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
 
-                      {/* Image overlay */}
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6 lg:hidden">
-                        <p className="text-sm font-medium text-white/80">
-                          {member.designation}
-                        </p>
+                    {/* Bottom gradient for legibility */}
+                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
 
-                        <h3 className="mt-1 text-2xl font-bold text-white">
-                          {member.name}
-                        </h3>
-                      </div>
-
+                    {/* Category badge */}
+                    <div className="absolute left-4 top-4">
+                      <span className="inline-flex items-center rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
+                        {member.category}
+                      </span>
                     </div>
 
+                    {/* LinkedIn icon (placeholder link) */}
+                    
+                      href="#"
+                      aria-label={`${member.name} on LinkedIn`}
+                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </a>
 
-                    {/* CEO Information */}
-                    <div className="p-7 sm:p-10 lg:p-12">
-
-                      <div className="mb-5 hidden lg:block">
-
-                        <Badge className="mb-4">
-                          Leadership
-                        </Badge>
-
-                        <h3 className="text-3xl font-bold text-foreground">
-                          {member.name}
-                        </h3>
-
-                        <p className="mt-2 text-lg font-medium text-primary">
-                          {member.designation}
-                        </p>
-
-                      </div>
-
-                      <div className="mb-5 flex items-center gap-3 lg:hidden">
-
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-                          <BriefcaseBusiness className="h-5 w-5 text-primary" />
-                        </div>
-
-                        <div>
-                          <p className="font-semibold text-foreground">
-                            {member.name}
-                          </p>
-
-                          <p className="text-sm text-primary">
-                            {member.designation}
-                          </p>
-                        </div>
-
-                      </div>
-
-                      <div className="h-px w-16 bg-primary mb-6" />
-
-                      <p className="text-base leading-8 text-muted-foreground">
-                        {member.experience}
+                    {/* Name / title overlay */}
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <h3 className="text-lg font-bold text-white">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-medium text-white/85">
+                        {member.designation}
                       </p>
-
-                      <div className="mt-8 flex flex-wrap gap-3">
-
-                        <div className="rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground">
-                          Leadership
-                        </div>
-
-                        <div className="rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground">
-                          Technology
-                        </div>
-
-                        <div className="rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground">
-                          Business Strategy
-                        </div>
-
-                      </div>
-
                     </div>
 
                   </div>
-                </Card>
-              ))}
 
+                  <CardContent className="p-6">
 
-            {/* Other Staff */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-              {teamMembers
-                .filter((member) => !member.featured)
-                .map((member) => (
-                  <Card
-                    key={member.name}
-                    className="group overflow-hidden border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl"
-                  >
-
-                    {/* Staff image */}
-                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-
-                      {/* Image gradient */}
-                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
-
+                    <div className="mb-4 flex items-center gap-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                        <BriefcaseBusiness className="h-4 w-4 text-primary" />
+                      </div>
+                      <span className="text-xs font-semibold uppercase tracking-wide text-primary">
+                        {member.category}
+                      </span>
                     </div>
 
+                    <p className="text-sm leading-7 text-muted-foreground">
+                      {member.experience}
+                    </p>
 
-                    <CardContent className="p-6">
+                  </CardContent>
 
-                      <div className="mb-4">
-
-                        <h3 className="text-xl font-bold text-foreground">
-                          {member.name}
-                        </h3>
-
-                        <p className="mt-1 text-sm font-semibold text-primary">
-                          {member.designation}
-                        </p>
-
-                      </div>
-
-                      <div className="mb-4 h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
-
-                      <p className="text-sm leading-7 text-muted-foreground">
-                        {member.experience}
-                      </p>
-
-                    </CardContent>
-
-                  </Card>
-                ))}
+                </Card>
+              ))}
 
             </div>
 

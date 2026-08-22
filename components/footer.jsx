@@ -57,12 +57,28 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-600">
+    <footer className="relative overflow-hidden bg-[#0d2b26] text-slate-300">
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-green-600/10 blur-3xl"></div>
+      {/* Subtle triangle line pattern (decorative) */}
+      <div className="pointer-events-none absolute inset-0 opacity-10">
+        <svg
+          className="h-full w-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 800 400"
+        >
+          <polyline
+            points="500,400 650,100 800,400"
+            fill="none"
+            stroke="white"
+            strokeWidth="1"
+          />
+          <polyline
+            points="600,400 700,200 800,400"
+            fill="none"
+            stroke="white"
+            strokeWidth="1"
+          />
+        </svg>
       </div>
 
       <div className="container relative z-10 mx-auto px-6 py-16 lg:px-8">
@@ -84,9 +100,9 @@ export function Footer() {
 
   <div>
 
-    <h2 className="text-2xl font-extrabold tracking-wide text-slate-900">
+    <h2 className="text-2xl font-extrabold tracking-wide text-white">
   MegaTech{" "}
-  <span className="text-emerald-600">Solution</span>
+  <span className="text-amber-400">Solution</span>
 </h2>
 
     <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
@@ -97,7 +113,7 @@ export function Footer() {
 
 </Link>
 
-            <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-500">
+            <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-300">
               Your trusted partner for premium computer accessories,
               gaming PCs, laptops, and enterprise IT solutions.
               Delivering quality technology products and exceptional
@@ -106,8 +122,8 @@ export function Footer() {
 
             <div className="mt-8 space-y-4">
 
-              <div className="flex items-start gap-3 text-sm text-slate-500">
-                <MapPin className="mt-1 h-5 w-5 text-emerald-600" />
+              <div className="flex items-start gap-3 text-sm text-slate-300">
+                <MapPin className="mt-1 h-5 w-5 text-amber-400" />
                 <span>
                   Office No. 3, Ameer Mall,
                   New City Phase-II,
@@ -115,32 +131,51 @@ export function Footer() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 text-sm text-slate-500">
-                <Phone className="h-5 w-5 text-emerald-600" />
+              <div className="flex items-center gap-3 text-sm text-slate-300">
+                <Phone className="h-5 w-5 text-amber-400" />
                 <span>+92 0306-9293923</span>
               </div>
 
-              <div className="flex items-center gap-3 text-sm text-slate-500">
-                <Mail className="h-5 w-5 text-emerald-600" />
+              <div className="flex items-center gap-3 text-sm text-slate-300">
+                <Mail className="h-5 w-5 text-amber-400" />
                 <span>megatechsolution1348@hotmail.com</span>
               </div>
 
             </div>
+
+            {/* Social icons */}
+            <div className="mt-8 flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  className="flex h-10 w-10 items-center justify-center rounded-md border border-slate-600 text-slate-300 transition-all duration-300 hover:border-amber-400 hover:bg-amber-400 hover:text-[#0d2b26]"
+                >
+                  <social.icon className="h-4 w-4" />
+                  <span className="sr-only">{social.name}</span>
+                </Link>
+              ))}
+            </div>
+
           </div>
 
           {/* Products */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
               Products
             </h3>
 
             <ul className="space-y-4">
-              {footerLinks.products.map((link) => (
+              {footerLinks.products.map((link, index) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
+                    className={`group inline-flex items-center text-sm transition-all duration-300 hover:translate-x-1 hover:text-amber-400 ${
+                      index === 0
+                        ? "text-white underline underline-offset-4"
+                        : "text-slate-300"
+                    }`}
                   >
                     {link.name}
                   </Link>
@@ -153,7 +188,7 @@ export function Footer() {
           {/* Company */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
               Company
             </h3>
 
@@ -162,7 +197,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
+                    className="group inline-flex items-center text-sm text-slate-300 transition-all duration-300 hover:translate-x-1 hover:text-amber-400"
                   >
                     {link.name}
                   </Link>
@@ -175,7 +210,7 @@ export function Footer() {
           {/* Support */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
               Support
             </h3>
 
@@ -184,7 +219,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
+                    className="group inline-flex items-center text-sm text-slate-300 transition-all duration-300 hover:translate-x-1 hover:text-amber-400"
                   >
                     {link.name}
                   </Link>
@@ -196,31 +231,23 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom */}
-
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-200 pt-8 md:flex-row">
-
-          <p className="text-sm tracking-wide text-slate-400">
-            © 2026 MegaTech Solution. All Rights Reserved.
-          </p>
-
-          <div className="flex items-center gap-4">
-
-            {socialLinks.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-500 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/30"
-              >
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.name}</span>
-              </Link>
-            ))}
-
-          </div>
-
+        {/* Back to top */}
+        <div className="mt-10">
+          
+            href="#top"
+            className="inline-flex items-center gap-2 rounded-md border border-slate-500 px-4 py-2 text-xs font-semibold tracking-wide text-slate-200 transition-all duration-300 hover:border-amber-400 hover:text-amber-400"
+          >
+            ↑ BACK TO TOP
+          </a>
         </div>
 
+      </div>
+
+      {/* Bottom copyright bar */}
+      <div className="relative z-10 bg-amber-500 py-3 text-center">
+        <p className="text-xs font-medium tracking-wide text-[#0d2b26]">
+          © 2026 MegaTech Solution. All Rights Reserved.
+        </p>
       </div>
 
     </footer>

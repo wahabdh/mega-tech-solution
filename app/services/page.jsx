@@ -34,19 +34,13 @@ const services = [
     features: ["Personalized configurations", "Premium components", "Cable management", "Stress testing included"],
   },
   {
-    icon: HardDrive,
-    title: "Data Recovery",
-    description: "Recover lost data from damaged, corrupted, or failed storage devices. High success rate guaranteed.",
-    features: ["SSD & HDD recovery", "RAID recovery", "Flash drive recovery", "Free evaluation"],
-  },
-  {
-    icon: Cpu,
+     icon: Cpu,
     title: "Hardware Upgrades",
     description: "Boost your computer's performance with professional hardware upgrades. RAM, SSD, GPU, and more.",
     features: ["RAM upgrades", "SSD installation", "Graphics card upgrades", "CPU upgrades"],
   },
   {
-    icon: Network,
+   icon: Network,
     title: "Network Setup",
     description: "Professional network installation and configuration for homes and businesses. Secure and reliable connectivity.",
     features: ["WiFi optimization", "Router setup", "Network security", "Mesh network installation"],
@@ -56,6 +50,12 @@ const services = [
     title: "IT Support",
     description: "Comprehensive IT support for businesses. Remote and on-site assistance available 24/7.",
     features: ["Remote support", "On-site visits", "System maintenance", "Security monitoring"],
+  },
+  {
+    icon: website,
+    title: "Software Development",
+    description: "Comprehensive  support for businesses. Remote assistance available 24/7.",
+    features: ["Remote support", "24/7 available", "Website/ Software updation", "easy to use"],
   },
 ]
 

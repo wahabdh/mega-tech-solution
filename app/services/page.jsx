@@ -12,6 +12,7 @@ import {
   Headphones,
   Network,
   ArrowRight,
+  Programming,
   CheckCircle2
 } from "lucide-react"
 

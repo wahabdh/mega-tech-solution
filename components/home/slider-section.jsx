@@ -10,7 +10,7 @@ export function SliderSection() {
   const [progressKey, setProgressKey] = useState(0)
   const sliderProducts = products.slice(0, 3)
 
-  // Optional per-slide eyebrow labels — edit these to whatever fits your products/categories
+  // Optional per-slide eyebrow labels
   const eyebrows = ["our company", "our approach", "view more"]
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function SliderSection() {
     return () => clearInterval(interval)
   }, [sliderProducts.length])
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentIndex(index)
     setProgressKey((k) => k + 1)
   }
@@ -31,16 +31,29 @@ export function SliderSection() {
     <section className="relative h-screen overflow-hidden bg-black">
       <style jsx>{`
         @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
+          0% {
+            width: 0%;
+          }
+          100% {
+            width: 100%;
+          }
         }
+
         .progress-bar-active {
           animation: progress 5s linear forwards;
         }
+
         @keyframes fadeSlide {
-          0% { opacity: 0; transform: translateY(16px); }
-          100% { opacity: 1; transform: translateY(0); }
+          0% {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
+
         .fade-slide-item {
           opacity: 0;
           animation: fadeSlide 0.6s ease-out forwards;
@@ -49,11 +62,14 @@ export function SliderSection() {
 
       {sliderProducts.map((product, index) => {
         const isActive = index === currentIndex
+
         return (
           <div
             key={product.id}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
+              isActive
+                ? "opacity-100 z-10"
+                : "opacity-0 pointer-events-none"
             }`}
           >
             {/* Background Image */}
@@ -64,17 +80,21 @@ export function SliderSection() {
               priority={isActive}
               className="object-cover"
             />
+
+            {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/55" />
 
-            {/* Content — left aligned, minimal */}
+            {/* Content — left aligned */}
             <div className="relative z-10 flex h-full items-center">
               <div className="w-full max-w-7xl mx-auto px-8 lg:px-20">
                 <div className="max-w-2xl">
 
-                  {/* Eyebrow label */}
+                  {/* Eyebrow Label */}
                   <span
                     className="fade-slide-item mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
-                    style={{ animationDelay: isActive ? "0.1s" : "0s" }}
+                    style={{
+                      animationDelay: isActive ? "0.1s" : "0s",
+                    }}
                   >
                     {eyebrows[index % eyebrows.length]}
                   </span>
@@ -82,7 +102,9 @@ export function SliderSection() {
                   {/* Headline */}
                   <h1
                     className="fade-slide-item mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
-                    style={{ animationDelay: isActive ? "0.2s" : "0s" }}
+                    style={{
+                      animationDelay: isActive ? "0.2s" : "0s",
+                    }}
                   >
                     {product.name}
                   </h1>
@@ -90,20 +112,25 @@ export function SliderSection() {
                   {/* Description */}
                   <p
                     className="fade-slide-item mb-8 max-w-lg text-base leading-7 text-gray-200 md:text-lg"
-                    style={{ animationDelay: isActive ? "0.3s" : "0s" }}
+                    style={{
+                      animationDelay: isActive ? "0.3s" : "0s",
+                    }}
                   >
                     {product.description}
                   </p>
 
-                  {/* CTA — text link with animated arrow, not a filled button */}
-                  
+                  {/* CTA — Text Link */}
+                  <a
                     href={`/products/${product.id}`}
                     className="fade-slide-item group inline-flex items-center gap-2 text-base font-semibold uppercase tracking-wide text-white"
-                    style={{ animationDelay: isActive ? "0.4s" : "0s" }}
+                    style={{
+                      animationDelay: isActive ? "0.4s" : "0s",
+                    }}
                   >
                     <span className="border-b-2 border-cyan-400 pb-1 transition-colors group-hover:border-white">
                       View Details
                     </span>
+
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
 
@@ -114,7 +141,7 @@ export function SliderSection() {
         )
       })}
 
-      {/* Slim progress-bar navigation, bottom-left, replacing dots */}
+      {/* Slim Progress-Bar Navigation */}
       <div className="absolute bottom-10 left-8 z-20 flex gap-3 lg:left-20">
         {sliderProducts.map((_, index) => (
           <button

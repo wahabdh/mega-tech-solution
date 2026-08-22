@@ -52,7 +52,7 @@ const services = [
     features: ["Remote support", "On-site visits", "System maintenance", "Security monitoring"],
   },
   {
-    icon: Web development,
+    icon: Code,
     title: "Software Development",
     description: "Comprehensive  support for businesses. Remote assistance available 24/7.",
     features: ["Remote support", "24/7 available", "Website/ Software updation", "easy to use"],

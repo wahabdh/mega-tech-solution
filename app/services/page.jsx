@@ -57,7 +57,8 @@ const services = [
     title: "Software Development",
     description: "Comprehensive support for businesses. Remote assistance available 24/7.",
     features: ["Remote support", "24/7 available", "Software updation", "easy to use"],
-    <Link href="https://primeseosolutions.vercel.app/">Visit or Site</Link>
+    externalLink: "https://primeseosolutions.vercel.app/",
+    externalLinkLabel: "Visit PrimeSEO Solution",
   },
 ]
 
@@ -121,6 +122,19 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+
+                    {service.externalLink && (
+                      <Button variant="link" className="mt-2 h-auto p-0 text-primary" asChild>
+                        <Link
+                          href={service.externalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {service.externalLinkLabel} <ArrowRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
+
                     <Button variant="link" className="mt-4 h-auto p-0 text-primary" asChild>
                       <Link href="/contact#contact-form">
                         Send us a Message <ArrowRight className="ml-1 h-4 w-4" />

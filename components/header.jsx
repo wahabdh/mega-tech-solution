@@ -43,20 +43,18 @@ export function Header() {
             className="h-11 w-11 object-contain transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105"
           />
 
-          <div className="leading-tight">
+         <div className="leading-tight">
+  <h1 className="text-[24px] font-black tracking-tight text-slate-900">
+    MegaTech{" "}
+    <span className="text-emerald-600">
+      Solution
+    </span>
+  </h1>
 
-            <h1 className="text-[24px] font-black tracking-tight text-slate-900">
-              MegaTech
-              <span className="text-emerald-600">
-                 Solution
-              </span>
-            </h1>
-
-            <p className="text-[11px] uppercase tracking-[3px] text-gray-500">
-              PREMIUM IT SOLUTIONS
-            </p>
-
-          </div>
+  <p className="text-[11px] uppercase tracking-[3px] text-gray-500">
+    PREMIUM IT SOLUTIONS
+  </p>
+</div>
         </Link>
 
         {/* Desktop Navigation */}

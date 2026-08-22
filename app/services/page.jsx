@@ -120,7 +120,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                     <Button variant="link" className="mt-4 h-auto p-0 text-primary" asChild>
-                      <Link href="/contact">
+                      <Link href="/contact-form">
                         Learn more <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
                   Service You Can Trust
                 </h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  With over 15 years of experience, MegaTech Solution has helped thousands of customers solve their tech problems. Our commitment to quality and customer satisfaction sets us apart.
+                  Our commitment to quality and customer satisfaction sets us apart.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {benefits.map((benefit) => (
@@ -178,7 +178,7 @@ export default function ServicesPage() {
                     <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-4">
                       <div>
                         <p className="text-sm text-muted-foreground">Email Us</p>
-                        <p className="font-semibold text-foreground">megatechsolution@hotmail.com</p>
+                        <p className="font-semibold text-foreground">megatechsolution1348@hotmail.com</p>
                       </div>
                       <Button size="sm" variant="outline" asChild>
                         <Link href="/contact">Contact</Link>

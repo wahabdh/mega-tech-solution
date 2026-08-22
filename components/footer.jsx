@@ -84,10 +84,10 @@ export function Footer() {
 
   <div>
 
-    <h2 className="text-2xl font-extrabold tracking-wide text-white">
-      MegaTech
-      <span className="text-cyan-400">Solution</span>
-    </h2>
+    <h2 className="text-2xl font-extrabold tracking-wide text-slate-100">
+  MegaTech{" "}
+  <span className="text-green-500">Solution</span>
+</h2>
 
     <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
       Premium IT Solutions

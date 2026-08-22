@@ -121,7 +121,7 @@ export default function ServicesPage() {
                     </ul>
                     <Button variant="link" className="mt-4 h-auto p-0 text-primary" asChild>
                       <Link href="/contact#contact-form">
-                        Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                        Send us a Message <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardContent>

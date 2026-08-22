@@ -70,7 +70,6 @@ const teamMembers = [
     id: 1,
     name: "Mr. Imran Javed",
     designation: "Chief Executive Officer",
-    category: "Leadership",
     image: "/images/ceo.jpg",
     experience:
       "Experienced business leader focused on technology, innovation, customer relationships and the continued growth of MegaTech Solution.",

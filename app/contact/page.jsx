@@ -68,7 +68,7 @@ const contactInfo = [
 const teamMembers = [
   {
     id: 1,
-    name: "CEO Name",
+    name: "Mr. Imran Javed",
     designation: "Chief Executive Officer",
     category: "Leadership",
     image: "/images/ceo.jpg",
@@ -77,9 +77,8 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Staff Member 1",
-    designation: "Technical Director",
-    category: "Development",
+    name: "Mr. Moavia Abdul Aziz",
+    designation: "Technical Manager",
     image: "/images/ceo.jpg",
     experience:
       "Experienced technology professional specializing in IT systems, hardware solutions and technical support.",

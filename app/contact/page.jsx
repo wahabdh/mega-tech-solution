@@ -67,36 +67,49 @@ const contactInfo = [
 
 const teamMembers = [
   {
+    id: 1,
     name: "CEO Name",
-    designation: "Chief Executive Officer",
+    designation: "CHIEF EXECUTIVE OFFICER",
+    category: "Leadership",
     image: "/images/ceo.jpg",
     experience:
-      "Leading MegaTech Solution with a strong vision for technology, innovation, and customer-focused solutions. With years of professional experience, the CEO focuses on building long-term relationships and delivering reliable technology services.",
-    featured: true,
+      "Experienced business leader focused on technology, innovation, customer relationships and the continued growth of MegaTech Solution.",
   },
   {
+    id: 2,
     name: "Staff Member 1",
-    designation: "Technical Director",
-    image: "/images/team/staff-1.jpg",
+    designation: "TECHNICAL DIRECTOR",
+    category: "Development",
+    image: "/images/ceo.jpg",
     experience:
-      "Experienced technology professional specializing in IT solutions, hardware systems, technical support, and modern technology infrastructure.",
-    featured: false,
+      "Experienced technology professional specializing in IT systems, hardware solutions and technical support.",
   },
   {
+    id: 3,
     name: "Staff Member 2",
-    designation: "IT & Systems Specialist",
-    image: "/images/team/staff-2.jpg",
+    designation: "CLIENT SERVICES DIRECTOR",
+    category: "Client Services",
+    image: "/images/ceo.jpg",
     experience:
-      "Focused on providing efficient technical solutions and helping clients select, configure, and maintain reliable technology systems.",
-    featured: false,
+      "Focused on customer relationships, service quality and providing professional technology solutions.",
   },
   {
+    id: 4,
     name: "Staff Member 3",
-    designation: "Sales & Customer Relations",
-    image: "/images/team/staff-3.jpg",
+    designation: "SALES & MARKETING MANAGER",
+    category: "Marketing & Sales",
+    image: "/images/ceo.jpg",
     experience:
-      "Dedicated to understanding customer requirements and delivering professional guidance, product recommendations, and excellent customer service.",
-    featured: false,
+      "Specializes in customer engagement, sales strategy and helping customers find the right technology solutions.",
+  },
+  {
+    id: 5,
+    name: "Staff Member 4",
+    designation: "IT SYSTEMS SPECIALIST",
+    category: "Development",
+    image: "/images/ceo.jpg",
+    experience:
+      "Provides technical expertise in computer systems, networking, hardware and IT infrastructure.",
   },
 ]
 

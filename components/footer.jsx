@@ -57,12 +57,12 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-black text-slate-300">
+    <footer className="relative overflow-hidden border-t border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-600">
 
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"></div>
+        <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-green-600/10 blur-3xl"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-6 py-16 lg:px-8">
@@ -84,12 +84,12 @@ export function Footer() {
 
   <div>
 
-    <h2 className="text-2xl font-extrabold tracking-wide text-slate-100">
+    <h2 className="text-2xl font-extrabold tracking-wide text-slate-900">
   MegaTech{" "}
   <span className="text-emerald-600">Solution</span>
 </h2>
 
-    <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+    <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
       Premium IT Solutions
     </p>
 
@@ -97,7 +97,7 @@ export function Footer() {
 
 </Link>
 
-            <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-400">
+            <p className="mt-6 max-w-sm text-[15px] leading-7 text-slate-500">
               Your trusted partner for premium computer accessories,
               gaming PCs, laptops, and enterprise IT solutions.
               Delivering quality technology products and exceptional
@@ -106,8 +106,8 @@ export function Footer() {
 
             <div className="mt-8 space-y-4">
 
-              <div className="flex items-start gap-3 text-sm text-slate-400">
-                <MapPin className="mt-1 h-5 w-5 text-cyan-400" />
+              <div className="flex items-start gap-3 text-sm text-slate-500">
+                <MapPin className="mt-1 h-5 w-5 text-emerald-600" />
                 <span>
                   Office No. 3, Ameer Mall,
                   New City Phase-II,
@@ -115,13 +115,13 @@ export function Footer() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 text-sm text-slate-400">
-                <Phone className="h-5 w-5 text-cyan-400" />
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <Phone className="h-5 w-5 text-emerald-600" />
                 <span>+92 0306-9293923</span>
               </div>
 
-              <div className="flex items-center gap-3 text-sm text-slate-400">
-                <Mail className="h-5 w-5 text-cyan-400" />
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <Mail className="h-5 w-5 text-emerald-600" />
                 <span>megatechsolution1348@hotmail.com</span>
               </div>
 
@@ -131,7 +131,7 @@ export function Footer() {
           {/* Products */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
               Products
             </h3>
 
@@ -140,7 +140,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
+                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
                   >
                     {link.name}
                   </Link>
@@ -153,7 +153,7 @@ export function Footer() {
           {/* Company */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
               Company
             </h3>
 
@@ -162,7 +162,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
+                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
                   >
                     {link.name}
                   </Link>
@@ -175,7 +175,7 @@ export function Footer() {
           {/* Support */}
           <div>
 
-            <h3 className="mb-5 text-lg font-bold tracking-wide text-white">
+            <h3 className="mb-5 text-lg font-bold tracking-wide text-slate-900">
               Support
             </h3>
 
@@ -184,7 +184,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
+                    className="group inline-flex items-center text-sm text-slate-500 transition-all duration-300 hover:translate-x-1 hover:text-emerald-600"
                   >
                     {link.name}
                   </Link>
@@ -198,9 +198,9 @@ export function Footer() {
 
         {/* Bottom */}
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-8 md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-200 pt-8 md:flex-row">
 
-          <p className="text-sm tracking-wide text-slate-500">
+          <p className="text-sm tracking-wide text-slate-400">
             © 2026 MegaTech Solution. All Rights Reserved.
           </p>
 
@@ -210,7 +210,7 @@ export function Footer() {
               <Link
                 key={social.name}
                 href={social.href}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-800/60 text-slate-400 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-cyan-500 hover:text-white hover:shadow-lg hover:shadow-cyan-500/40"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-500 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/30"
               >
                 <social.icon className="h-5 w-5" />
                 <span className="sr-only">{social.name}</span>

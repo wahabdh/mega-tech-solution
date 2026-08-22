@@ -48,12 +48,12 @@ export function Header() {
             <h1 className="text-[24px] font-black tracking-tight text-slate-900">
               MegaTech
               <span className="text-emerald-600">
-                Solution
+                 Solution
               </span>
             </h1>
 
             <p className="text-[11px] uppercase tracking-[3px] text-gray-500">
-              Smart Technology Store
+              PREMIUM IT SOLUTIONS
             </p>
 
           </div>

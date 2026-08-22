@@ -24,7 +24,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+92 0306-9293923"],
+    details: ["+92 0310-4601236"],
     description: "Mon-Fri from 8am to 8pm",
   },
   {

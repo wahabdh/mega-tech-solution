@@ -32,7 +32,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+92 0310-4601236"],
+    details: ["+92 0306-9293923"],
     description: "Mon-Fri from 8am to 8pm",
   },
   {

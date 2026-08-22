@@ -121,7 +121,7 @@ export function SliderSection() {
 
                   {/* CTA — Text Link */}
                   <a
-                    href={`/products/${product.id}`}
+                      href="/products"
                     className="fade-slide-item group inline-flex items-center gap-2 text-base font-semibold uppercase tracking-wide text-white"
                     style={{
                       animationDelay: isActive ? "0.4s" : "0s",

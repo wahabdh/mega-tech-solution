@@ -12,7 +12,7 @@ import {
   Headphones,
   Network,
   ArrowRight,
-  Programming,
+  Code2,
   CheckCircle2
 } from "lucide-react"
 
@@ -53,9 +53,9 @@ const services = [
     features: ["Remote support", "On-site visits", "System maintenance", "Security monitoring"],
   },
   {
-    icon: Headphones,
+    icon: Code2,
     title: "Software Development",
-    description: "Comprehensive  support for businesses. Remote assistance available 24/7.",
+    description: "Comprehensive support for businesses. Remote assistance available 24/7.",
     features: ["Remote support", "24/7 available", "Software updation", "easy to use"],
   },
 ]

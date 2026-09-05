@@ -23,11 +23,6 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 
-/* =========================================================
-   CONTACT INFORMATION
-   Existing information kept unchanged
-========================================================= */
-
 const contactInfo = [
   {
     icon: Phone,
@@ -59,11 +54,6 @@ const contactInfo = [
     description: "Sunday: Closed",
   },
 ]
-
-/* =========================================================
-   TEAM MEMBERS
-   EDIT ONLY THIS SECTION WHEN YOU ADD YOUR REAL STAFF
-========================================================= */
 
 const teamMembers = [
   {
@@ -107,11 +97,6 @@ const teamMembers = [
       "Provides technical expertise in computer systems, networking, hardware and IT infrastructure.",
   },
 ]
-
-/* =========================================================
-   FAQS
-   Existing information kept unchanged
-========================================================= */
 
 const faqs = [
   {
@@ -195,13 +180,8 @@ export default function ContactPage() {
 
       <main className="flex-1">
 
-        {/* =====================================================
-            PREMIUM HERO SECTION
-        ====================================================== */}
-
         <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-secondary/60 via-background to-primary/5 py-20 lg:py-28">
 
-          {/* Decorative background elements */}
           <div className="absolute -left-32 -top-32 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
           <div className="absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 
@@ -226,33 +206,28 @@ export default function ContactPage() {
                 help. Reach out to us and our team will get back to you within
                 24 hours.
               </p>
-<div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-  
-    href="#contact-form"
-    className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
-  >
-    Contact Our Team
-    <ArrowUpRight className="h-4 w-4" />
-  </a>
 
-  
-    href="#our-team"
-    className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
-  >
-    Meet Our Team
-  </a>
-</div>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                
+                  href="#contact-form"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Contact Our Team
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+
+                
+                  href="#our-team"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
+                >
+                  Meet Our Team
+                </a>
+              </div>
 
             </div>
 
           </div>
         </section>
-
-
-        {/* =====================================================
-            CONTACT INFORMATION
-            Existing data kept unchanged
-        ====================================================== */}
 
         <section className="relative -mt-8 z-10 pb-8">
           <div className="container mx-auto px-4 lg:px-8">
@@ -298,18 +273,12 @@ export default function ContactPage() {
           </div>
         </section>
 
-
-        {/* =====================================================
-            MEET OUR TEAM — professional uniform grid
-        ====================================================== */}
-
         <section
           id="our-team"
           className="py-16 lg:py-24"
         >
           <div className="container mx-auto px-4 lg:px-8">
 
-            {/* Section heading */}
             <div className="mx-auto mb-14 max-w-3xl text-center">
 
               <Badge
@@ -332,7 +301,6 @@ export default function ContactPage() {
 
             </div>
 
-            {/* Team grid */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
               {teamMembers.map((member) => (
@@ -341,7 +309,6 @@ export default function ContactPage() {
                   className="group overflow-hidden border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-primary/30"
                 >
 
-                  {/* Photo */}
                   <div className="relative aspect-[4/5] overflow-hidden bg-muted">
 
                     <img
@@ -350,10 +317,8 @@ export default function ContactPage() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    {/* Bottom gradient for legibility */}
                     <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
 
-                    {/* LinkedIn icon (placeholder link) */}
                     
                       href="#"
                       aria-label={`${member.name} on LinkedIn`}
@@ -362,7 +327,6 @@ export default function ContactPage() {
                       <Linkedin className="h-4 w-4" />
                     </a>
 
-                    {/* Name / title overlay */}
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="text-lg font-bold text-white">
                         {member.name}
@@ -399,12 +363,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-
-        {/* =====================================================
-            CONTACT FORM & MAP
-            Existing functionality/data kept unchanged
-        ====================================================== */}
-
         <section
           id="contact-form"
           className="border-y border-border bg-secondary/20 py-16 lg:py-20"
@@ -431,10 +389,8 @@ export default function ContactPage() {
 
             </div>
 
-
             <div className="grid gap-8 lg:grid-cols-2">
 
-              {/* Contact Form */}
               <Card className="border-border bg-background shadow-lg">
 
                 <CardHeader className="border-b border-border">
@@ -496,197 +452,4 @@ export default function ContactPage() {
                           />
                         </div>
 
-                        <div className="space-y-2">
-                          <Label htmlFor="email">
-                            Email *
-                          </Label>
-
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="ali@example.com"
-                            value={formState.email}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-
-                      </div>
-
-
-                      <div className="grid gap-4 sm:grid-cols-2">
-
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">
-                            Phone Number
-                          </Label>
-
-                          <Input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            placeholder="+92 (306) 00000000"
-                            value={formState.phone}
-                            onChange={handleChange}
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="subject">
-                            Subject *
-                          </Label>
-
-                          <Input
-                            id="subject"
-                            name="subject"
-                            placeholder="Product inquiry"
-                            value={formState.subject}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-
-                      </div>
-
-
-                      <div className="space-y-2">
-
-                        <Label htmlFor="message">
-                          Message *
-                        </Label>
-
-                        <Textarea
-                          id="message"
-                          name="message"
-                          placeholder="Tell us how we can help you..."
-                          rows={5}
-                          value={formState.message}
-                          onChange={handleChange}
-                          required
-                        />
-
-                      </div>
-
-
-                      <Button
-                        type="submit"
-                        className="w-full gap-2"
-                        disabled={isLoading}
-                      >
-
-                        {isLoading ? (
-                          <>
-                            <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="h-4 w-4" />
-                            Send Message
-                          </>
-                        )}
-
-                      </Button>
-
-                    </form>
-
-                  )}
-
-                </CardContent>
-
-              </Card>
-
-
-              {/* Map / FAQ */}
-              <div className="space-y-6">
-
-                {/* Map */}
-                <Card className="overflow-hidden border-border shadow-lg">
-
-                  <div className="relative h-[280px] bg-muted">
-
-                    <iframe
-                      src="https://www.google.com/maps/place/Ameer+Mall/@33.7519976,72.7404517,17z/data=!3m1!4b1!4m6!3m5!1s0x38dfa70033d64fa3:0xa478892c183bf65e!8m2!3d33.7519976!4d72.7404517!16s%2Fg%2F11xh9qtvsv?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="MegaTech Solution Location"
-                    />
-
-                  </div>
-
-                  <CardContent className="p-5">
-
-                    <div className="flex items-start gap-3">
-
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                        <MapPin className="h-5 w-5 text-primary" />
-                      </div>
-
-                      <div>
-                        <p className="font-semibold text-foreground">
-                          Visit MegaTech Solution
-                        </p>
-
-                        <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                          office No 3 Ameer Mall New City Phase 2 , Wah,
-                          Pakistan, 47010
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </CardContent>
-
-                </Card>
-
-
-                {/* FAQ */}
-                <Card className="border-border shadow-lg">
-
-                  <CardHeader>
-                    <CardTitle className="text-foreground">
-                      Frequently Asked Questions
-                    </CardTitle>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-
-                    {faqs.map((faq) => (
-                      <div
-                        key={faq.question}
-                        className="border-b border-border pb-4 last:border-0 last:pb-0"
-                      >
-
-                        <h4 className="font-medium text-foreground">
-                          {faq.question}
-                        </h4>
-
-                        <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                          {faq.answer}
-                        </p>
-
-                      </div>
-                    ))}
-
-                  </CardContent>
-
-                </Card>
-
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+                        <div

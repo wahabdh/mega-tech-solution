@@ -4,63 +4,13 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Link from "next/link"
-import { 
-  Wrench, 
-  Monitor, 
-  HardDrive, 
-  Cpu, 
-  Headphones,
-  Network,
-  ArrowRight,
-  Code2,
-  CheckCircle2
-} from "lucide-react"
+import { services } from "@/lib/services-data"
+import { ArrowRight, CheckCircle2, Headphones } from "lucide-react"
 
 export const metadata = {
   title: "Our Services - MegaTech Solution",
   description: "Professional computer repair, custom PC building, data recovery, and IT support services.",
 }
-
-const services = [
-  {
-    icon: Wrench,
-    title: "Computer Repair",
-    description: "Expert diagnosis and repair for all computer issues. Hardware failures, software problems, virus removal, and more.",
-    features: ["Hardware diagnostics", "Software troubleshooting", "Virus & malware removal", "Performance optimization"],
-  },
-  {
-    icon: Monitor,
-    title: "Custom PC Building",
-    description: "Get a custom-built PC tailored to your exact needs. Gaming, workstation, or everyday use - we build it right.",
-    features: ["Personalized configurations", "Premium components", "Cable management", "Stress testing included"],
-  },
-  {
-     icon: Cpu,
-    title: "Hardware Upgrades",
-    description: "Boost your computer's performance with professional hardware upgrades. RAM, SSD, GPU, and more.",
-    features: ["RAM upgrades", "SSD installation", "Graphics card upgrades", "CPU upgrades"],
-  },
-  {
-   icon: Network,
-    title: "Network Setup",
-    description: "Professional network installation and configuration for homes and businesses. Secure and reliable connectivity.",
-    features: ["WiFi optimization", "Router setup", "Network security", "Mesh network installation"],
-  },
-  {
-    icon: Headphones,
-    title: "IT Support",
-    description: "Comprehensive IT support for businesses. Remote and on-site assistance available 24/7.",
-    features: ["Remote support", "On-site visits", "System maintenance", "Security monitoring"],
-  },
-  {
-    icon: Code2,
-    title: "Software Development",
-    description: "Comprehensive support for businesses. Remote assistance available 24/7.",
-    features: ["Remote support", "24/7 available", "Software updation", "easy to use"],
-    externalLink: "https://primeseosolutions.vercel.app/",
-    externalLinkLabel: "Visit PrimeSEO Solution",
-  },
-]
 
 const benefits = [
   "Free diagnostic assessment",
@@ -105,43 +55,31 @@ export default function ServicesPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <Card key={service.title} className="group border-border transition-all hover:border-primary/50 hover:shadow-lg">
-                  <CardHeader>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                      <service.icon className="h-7 w-7 text-primary" />
-                    </div>
-                    <h3 className="mt-4 text-xl font-semibold text-foreground">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-
-                    {service.externalLink && (
-                      <Button variant="link" className="mt-2 h-auto p-0 text-primary" asChild>
-                        <Link
-                          href={service.externalLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {service.externalLinkLabel} <ArrowRight className="ml-1 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    )}
-
-                    <Button variant="link" className="mt-4 h-auto p-0 text-primary" asChild>
-                      <Link href="/contact#contact-form">
-                        Send us a Message <ArrowRight className="ml-1 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                <Link key={service.slug} href={`/services/${service.slug}`} className="block h-full">
+                  <Card className="group h-full border-border transition-all hover:border-primary/50 hover:shadow-lg hover:-translate-y-1">
+                    <CardHeader>
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                        <service.icon className="h-7 w-7 text-primary" />
+                      </div>
+                      <h3 className="mt-4 text-xl font-semibold text-foreground">{service.title}</h3>
+                      <p className="text-muted-foreground">{service.shortDescription}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2">
+                        {service.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <CheckCircle2 className="h-4 w-4 text-primary" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                        View Service Details
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

@@ -364,14 +364,14 @@ export default function ContactPage() {
                       </span>
                     </div>
 
-                    {/* LinkedIn icon (placeholder link) */}
-                    
-                      href="#"
-                      aria-label={`${member.name} on LinkedIn`}
-                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
+                   {/* LinkedIn icon (placeholder link) */}
+
+  href="#"
+  aria-label={`${member.name} on LinkedIn`}
+  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+>
+  <Linkedin className="h-4 w-4" />
+</a>
 
                     {/* Name / title overlay */}
                     <div className="absolute inset-x-0 bottom-0 p-5">

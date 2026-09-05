@@ -226,23 +226,22 @@ export default function ContactPage() {
                 help. Reach out to us and our team will get back to you within
                 24 hours.
               </p>
+<div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+  
+    href="#contact-form"
+    className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+  >
+    Contact Our Team
+    <ArrowUpRight className="h-4 w-4" />
+  </a>
 
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                
-                  href="#contact-form"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
-                >
-                  Contact Our Team
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-
-                
-                  href="#our-team"
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
-                >
-                  Meet Our Team
-                </a>
-              </div>
+  
+    href="#our-team"
+    className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
+  >
+    Meet Our Team
+  </a>
+</div>
 
             </div>
 

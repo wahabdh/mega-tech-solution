@@ -86,7 +86,6 @@ const teamMembers = [
     id: 3,
     name: "Staff Member 2",
     designation: "Client Services Director",
-    category: "Client Services",
     image: "/images/ceo.jpg",
     experience:
       "Focused on customer relationships, service quality and providing professional technology solutions.",
@@ -95,7 +94,6 @@ const teamMembers = [
     id: 4,
     name: "Staff Member 3",
     designation: "Sales & Marketing Manager",
-    category: "Marketing & Sales",
     image: "/images/ceo.jpg",
     experience:
       "Specializes in customer engagement, sales strategy and helping customers find the right technology solutions.",
@@ -104,7 +102,6 @@ const teamMembers = [
     id: 5,
     name: "Staff Member 4",
     designation: "IT Systems Specialist",
-    category: "Development",
     image: "/images/ceo.jpg",
     experience:
       "Provides technical expertise in computer systems, networking, hardware and IT infrastructure.",
@@ -231,20 +228,20 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-  
-  href="#contact-form"
-  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
->
-  Contact Our Team
-  <ArrowUpRight className="h-4 w-4" />
-</a>
+                
+                  href="#contact-form"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Contact Our Team
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
 
-
-  href="#our-team"
-  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
->
-  Meet Our Team
-</a>
+                
+                  href="#our-team"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:bg-muted"
+                >
+                  Meet Our Team
+                </a>
               </div>
 
             </div>
@@ -357,21 +354,14 @@ export default function ContactPage() {
                     {/* Bottom gradient for legibility */}
                     <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
 
-                    {/* Category badge */}
-                    <div className="absolute left-4 top-4">
-                      <span className="inline-flex items-center rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
-                        {member.category}
-                      </span>
-                    </div>
-
-                   {/* LinkedIn icon (placeholder link) */}
-
-  href="#"
-  aria-label={`${member.name} on LinkedIn`}
-  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
->
-  <Linkedin className="h-4 w-4" />
-</a>
+                    {/* LinkedIn icon (placeholder link) */}
+                    
+                      href="#"
+                      aria-label={`${member.name} on LinkedIn`}
+                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </a>
 
                     {/* Name / title overlay */}
                     <div className="absolute inset-x-0 bottom-0 p-5">
@@ -392,7 +382,7 @@ export default function ContactPage() {
                         <BriefcaseBusiness className="h-4 w-4 text-primary" />
                       </div>
                       <span className="text-xs font-semibold uppercase tracking-wide text-primary">
-                        {member.category}
+                        {member.designation}
                       </span>
                     </div>
 

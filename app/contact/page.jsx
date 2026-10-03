@@ -69,30 +69,6 @@ image: "/images/ceo.jpg",
 experience:
 "Experienced business leader focused on technology, innovation, customer relationships and the continued growth of MegaTech Solution.",
 },
-{
-id: 2,
-name: "Mr. Waqar Arif Goraya",
-designation: "Technical Manager",
-image: "/images/ceo.jpg",
-experience:
-"Experienced technology professional specializing in IT systems, hardware solutions and technical support.",
-},
-{
-id: 3,
-name: "Mr. Abdul Wahab",
-designation: "Client Services Manager",
-image: "/images/ceo.jpg",
-experience:
-"Focused on customer relationships, service quality and providing professional technology solutions.",
-},
-{
-id: 4,
-name: "Mr. Moavia Abdul Aziz",
-designation: "IT Systems Specialist",
-image: "/images/ceo.jpg",
-experience:
-"Provides technical expertise in computer systems, networking, hardware and IT infrastructure.",
-},
 ]
 
 const faqs = [

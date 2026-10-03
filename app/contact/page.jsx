@@ -80,7 +80,7 @@ experience:
 {
 id: 3,
 name: "Mr. Abdul Wahab",
-designation: "Client Services Director",
+designation: "Client Services Manager",
 image: "/images/ceo.jpg",
 experience:
 "Focused on customer relationships, service quality and providing professional technology solutions.",

@@ -71,7 +71,7 @@ experience:
 },
 {
 id: 2,
-name: "Mr. Moavia Abdul Aziz",
+name: "Mr. Waqar Arif Goraya",
 designation: "Technical Manager",
 image: "/images/ceo.jpg",
 experience:
@@ -79,7 +79,7 @@ experience:
 },
 {
 id: 3,
-name: "Staff Member 2",
+name: "Mr. Abdul Wahab",
 designation: "Client Services Director",
 image: "/images/ceo.jpg",
 experience:
@@ -87,15 +87,7 @@ experience:
 },
 {
 id: 4,
-name: "Staff Member 3",
-designation: "Sales & Marketing Manager",
-image: "/images/ceo.jpg",
-experience:
-"Specializes in customer engagement, sales strategy and helping customers find the right technology solutions.",
-},
-{
-id: 5,
-name: "Staff Member 4",
+name: "Mr. Moavia Abdul Aziz",
 designation: "IT Systems Specialist",
 image: "/images/ceo.jpg",
 experience:

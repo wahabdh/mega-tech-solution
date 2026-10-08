@@ -6,7 +6,6 @@ import {
   Shield,
   Truck,
   Headphones,
-  Cpu,
   CheckCircle,
 } from "lucide-react"
 
@@ -30,67 +29,112 @@ const features = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-200">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl"></div>
-        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-blue-400/15 blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div>
+    <section className="relative overflow-hidden bg-white">
+
+      {/* =====================================================
+          BACKGROUND DESIGN
+      ====================================================== */}
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+        {/* Soft blue glow */}
+        <div className="absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-cyan-100/60 blur-3xl" />
+
+        <div className="absolute right-[-150px] top-[-100px] h-[550px] w-[550px] rounded-full bg-blue-100/60 blur-3xl" />
+
+        {/* Bottom glow */}
+        <div className="absolute bottom-0 left-1/2 h-[350px] w-[700px] -translate-x-1/2 rounded-full bg-sky-100/50 blur-3xl" />
+
+        {/* Decorative diagonal shape */}
+        <div className="absolute left-0 top-0 h-32 w-32 -translate-x-16 -translate-y-16 rotate-45 bg-cyan-400/20" />
+
+        <div className="absolute bottom-0 right-0 h-32 w-32 translate-x-16 translate-y-16 rotate-45 bg-cyan-400/20" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 py-20 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* LEFT SIDE */}
-          <div>
+      {/* =====================================================
+          MAIN HERO
+      ====================================================== */}
+
+      <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
+
+        <div className="grid min-h-[680px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-0">
+
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
+
+          <div className="relative z-20 py-16 lg:py-20">
+
             {/* Badge */}
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold text-cyan-700 backdrop-blur">
-              <span className="relative flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-500 opacity-75"></span>
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-500"></span>
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-200 bg-white/90 px-5 py-2.5 text-sm font-semibold text-blue-700 shadow-sm backdrop-blur">
+
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-500 opacity-60" />
+
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500" />
               </span>
+
               Latest Gaming PCs & Premium Accessories
             </div>
 
-          {/* Heading */}
-<h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-6xl">
-  Powering Your Digital{" "}
-  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-    Future
-  </span>
-</h1>
+            {/* Heading */}
+            <h1 className="max-w-3xl text-5xl font-black leading-[1.02] tracking-tight text-slate-900 sm:text-6xl lg:text-[64px]">
+
+              Powering Your{" "}
+
+              <span className="block bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 bg-clip-text text-transparent">
+                Digital Future
+              </span>
+
+            </h1>
 
             {/* Description */}
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
+            <p className="mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               Discover enterprise-grade computers, gaming PCs, laptops,
               workstations and premium accessories engineered for
               professionals, businesses, creators and gamers who demand
               uncompromising performance.
             </p>
 
-            {/* Bullet Points */}
-            <div className="mt-8 space-y-4">
+            {/* =================================================
+                TRUST POINTS
+            ================================================== */}
+
+            <div className="mt-7 space-y-3">
+
               <div className="flex items-center gap-3 text-slate-700">
-                <CheckCircle className="h-5 w-5 text-cyan-500" />
-                <span>100% Genuine Products</span>
+                <CheckCircle className="h-5 w-5 shrink-0 text-cyan-500" />
+                <span className="text-sm font-medium sm:text-base">
+                  100% Genuine Products
+                </span>
               </div>
 
               <div className="flex items-center gap-3 text-slate-700">
-                <CheckCircle className="h-5 w-5 text-cyan-500" />
-                <span>Authorized Warranty Support</span>
+                <CheckCircle className="h-5 w-5 shrink-0 text-cyan-500" />
+                <span className="text-sm font-medium sm:text-base">
+                  Authorized Warranty Support
+                </span>
               </div>
 
               <div className="flex items-center gap-3 text-slate-700">
-                <CheckCircle className="h-5 w-5 text-cyan-500" />
-                <span>Trusted by Thousands of Customers</span>
+                <CheckCircle className="h-5 w-5 shrink-0 text-cyan-500" />
+                <span className="text-sm font-medium sm:text-base">
+                  Trusted by Thousands of Customers
+                </span>
               </div>
+
             </div>
 
-            {/* Buttons */}
-            <div className="mt-10 flex flex-wrap gap-5">
+            {/* =================================================
+                BUTTONS
+            ================================================== */}
+
+            <div className="mt-9 flex flex-wrap gap-4">
+
               <Button
                 size="lg"
                 asChild
-                className="h-14 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 text-white shadow-xl shadow-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/50"
+                className="h-13 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-7 text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/30"
               >
                 <Link href="#products">
                   Shop Now
@@ -102,97 +146,220 @@ export function HeroSection() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="h-14 rounded-xl border-slate-300 bg-white px-8 text-slate-900 shadow hover:border-cyan-500 hover:bg-slate-100"
+                className="h-13 rounded-xl border-slate-300 bg-white px-7 text-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-50"
               >
                 <Link href="/services">
                   Our Services
                 </Link>
               </Button>
+
             </div>
 
-            {/* Feature Cards */}
-            <div className="mt-14 grid gap-5 sm:grid-cols-3">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-2xl"
-                >
-                  <feature.icon className="mb-4 h-8 w-8 text-cyan-500" />
-
-                  <h3 className="font-semibold text-slate-900">
-                    {feature.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
-                    {/* RIGHT SIDE */}
-          <div className="relative">
-            {/* Glow Behind Image */}
-            <div className="absolute -top-10 -right-10 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
-            <div className="absolute -bottom-10 -left-10 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
 
-            {/* Main Image */}
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+          {/* =================================================
+              RIGHT PRODUCT / OFFICE IMAGE
+          ================================================== */}
+
+          <div className="relative min-h-[480px] lg:min-h-[680px]">
+
+            {/* Large background glow */}
+            <div className="absolute right-[-100px] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-cyan-100/70 blur-3xl" />
+
+            {/* Image container */}
+            <div
+              className="
+                absolute
+                inset-y-0
+                right-[-40px]
+                left-[-40px]
+                overflow-hidden
+                lg:right-[-100px]
+                lg:left-[-20px]
+              "
+            >
+
               <Image
                 src="/images/hero-gaming-pc.jpg"
                 alt="Gaming PC Setup"
-                width={900}
-                height={700}
+                fill
                 priority
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="
+                  object-cover
+                  object-center
+                  transition-transform
+                  duration-700
+                  hover:scale-[1.03]
+                "
               />
 
-              {/* Light Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
+              {/* White fade on left */}
+              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white via-white/80 to-transparent" />
+
+              {/* White fade at bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/30 to-transparent" />
+
+              {/* Subtle image overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-600/10" />
+
             </div>
 
-            {/* Floating Customer Card */}
-            <div className="absolute -bottom-8 -left-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl">
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600">
-                  <span className="text-xl font-bold text-white">
-                    5K+
-                  </span>
-                </div>
+            {/* =================================================
+                AI READY CARD
+            ================================================== */}
 
-                <div>
-                  <p className="font-semibold text-slate-900">
-                    Happy Customers
-                  </p>
+            <div className="absolute right-2 top-16 z-20 hidden rounded-2xl border border-white/70 bg-white/95 px-5 py-4 shadow-xl backdrop-blur-md sm:block lg:right-0 lg:top-24">
 
-                  <p className="text-sm text-slate-600">
-                    Trusted Across Pakistan
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating CPU Card */}
-            <div className="absolute top-8 -right-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl">
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-cyan-100 p-3">
-                  <Cpu className="h-8 w-8 text-cyan-600" />
+
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50">
+
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg border-2 border-cyan-500">
+                    <span className="h-2.5 w-2.5 rounded-sm bg-cyan-500" />
+                  </div>
+
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-bold text-slate-900">
                     AI Ready
                   </p>
 
-                  <p className="text-xs text-slate-600">
+                  <p className="text-xs text-slate-500">
                     Latest Hardware
                   </p>
                 </div>
+
               </div>
+
             </div>
+
+            {/* =================================================
+                HAPPY CUSTOMERS CARD
+            ================================================== */}
+
+            <div className="absolute bottom-28 left-2 z-20 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md sm:left-6 lg:bottom-32 lg:left-0">
+
+              <div className="flex items-center gap-3">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-md">
+
+                  <span className="text-base font-black text-white">
+                    5K+
+                  </span>
+
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-slate-900">
+                    Happy Customers
+                  </p>
+
+                  <p className="text-xs text-slate-500">
+                    Trusted Across Pakistan
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
+        {/* =====================================================
+            FEATURE CARDS
+        ====================================================== */}
+
+        <div className="relative z-30 -mt-4 pb-12 lg:-mt-10 lg:pb-16">
+
+          <div className="grid gap-4 md:grid-cols-3 lg:gap-6">
+
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="
+                  group
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white/95
+                  p-5
+                  shadow-lg
+                  shadow-slate-200/60
+                  backdrop-blur
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-cyan-200
+                  hover:shadow-xl
+                "
+              >
+
+                <div className="flex items-center gap-4">
+
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex
+                      h-12
+                      w-12
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-cyan-50
+                      transition-all
+                      duration-300
+                      group-hover:bg-cyan-500
+                    "
+                  >
+                    <feature.icon
+                      className="
+                        h-6
+                        w-6
+                        text-cyan-500
+                        transition-colors
+                        duration-300
+                        group-hover:text-white
+                      "
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div>
+
+                    <h3 className="font-bold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-1 text-sm text-slate-500">
+                      {feature.description}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
       </div>
+
+      {/* =====================================================
+          DECORATIVE SIDE ACCENTS
+      ====================================================== */}
+
+      <div className="pointer-events-none absolute bottom-0 right-0 h-32 w-20 bg-gradient-to-tl from-cyan-400/30 to-transparent [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
+
+      <div className="pointer-events-none absolute left-0 top-20 h-24 w-16 bg-gradient-to-br from-cyan-400/30 to-transparent [clip-path:polygon(0_0,100%_0,0_100%)]" />
+
     </section>
   )
 }

@@ -180,7 +180,7 @@ export function HeroSection() {
             >
 
               <Image
-                src="/images/hero-gaming-pc.jpg"
+                src="/images/Gaming PC Setup.jpg"
                 alt="Gaming PC Setup"
                 fill
                 priority

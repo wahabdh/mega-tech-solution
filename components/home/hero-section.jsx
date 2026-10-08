@@ -15,7 +15,7 @@ import {
   Use a PC image with a TRANSPARENT background (PNG or WebP) so the case
   sits on the 3D platform. Save it at public/images/hero-gaming-pc.png
 */
-const HERO_IMAGE = "/images/hero-gaming-pc.jpg"
+const HERO_IMAGE = "/images/Gaming PC Setup.jpg"
 
 const trustPoints = [
   "100% Genuine Products",
@@ -177,8 +177,8 @@ export function HeroSection() {
               {/* PC image */}
               <div className="hero-float absolute bottom-[98px] left-1/2 aspect-[3/4] w-[64%] -translate-x-1/2">
                 <Image
-                  src="/images/hero-gaming-pc.jpg"
-                  alt="hero-gaming-pc"
+                  src="/images/Gaming PC Setup.jpg"
+                  alt="Gaming PC Setup"
                   fill
                   priority
                   sizes="(max-width: 1024px) 60vw, 320px"

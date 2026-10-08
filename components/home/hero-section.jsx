@@ -15,7 +15,7 @@ import {
   Use a PC image with a TRANSPARENT background (PNG or WebP) so the case
   sits on the 3D platform. Save it at public/images/hero-gaming-pc.png
 */
-const HERO_IMAGE = "/images/hero-gaming-pc.png"
+const HERO_IMAGE = "/images/hero-gaming-pc.pjg"
 
 const trustPoints = [
   "100% Genuine Products",

@@ -10,20 +10,18 @@ import {
   Code2,
   CheckCircle2,
   ArrowRight,
+  Phone,
   ShieldCheck,
   Clock3,
-  BadgeCheck,
+  Users,
+  LockKeyhole,
   Wallet,
-  Phone,
-  Mail,
-  Laptop,
-  Zap,
 } from "lucide-react"
 
 export const metadata = {
   title: "Our Services | MegaTech Solution",
   description:
-    "Explore professional computer repair, custom PC building, hardware upgrades, network setup, IT support, and software development services from MegaTech Solution.",
+    "Professional IT solutions for home and business, including computer repair, custom PC building, hardware upgrades, networking, IT support, and software development.",
 }
 
 const services = [
@@ -31,79 +29,73 @@ const services = [
     icon: Wrench,
     title: "Computer Repair",
     description:
-      "Fast, reliable solutions for computer hardware and software problems.",
+      "Hardware & software issues, virus removal and more.",
+    color: "blue",
     features: [
       "Hardware diagnostics",
       "Software troubleshooting",
-      "Virus and malware removal",
-      "Performance optimization",
+      "Virus removal",
     ],
-    color: "blue",
   },
   {
     icon: Monitor,
     title: "Custom PC Building",
     description:
-      "Custom-built PCs designed for gaming, professional work, and everyday use.",
+      "Gaming, workstation or daily-use PCs built for your needs.",
+    color: "sky",
     features: [
-      "Personalized configurations",
-      "Premium components",
-      "Professional cable management",
+      "Custom configurations",
+      "Quality components",
       "System testing",
     ],
-    color: "cyan",
   },
   {
     icon: Cpu,
     title: "Hardware Upgrades",
     description:
-      "Improve speed, performance, and productivity with the right upgrades.",
+      "RAM, SSD, GPU and more for better performance.",
+    color: "navy",
     features: [
-      "RAM upgrades",
-      "SSD installation",
-      "Graphics card upgrades",
-      "CPU upgrades",
+      "RAM and SSD upgrades",
+      "Graphics card installation",
+      "Performance improvement",
     ],
-    color: "blue",
   },
   {
     icon: Network,
     title: "Network Setup",
     description:
-      "Reliable connectivity and secure network solutions for homes and offices.",
+      "Wi-Fi, routers, security and network solutions.",
+    color: "cyan",
     features: [
-      "Wi-Fi optimization",
       "Router configuration",
+      "Wi-Fi optimization",
       "Network security",
-      "Network installation",
     ],
-    color: "green",
   },
   {
     icon: Headphones,
     title: "IT Support",
     description:
-      "Practical technical support to keep your systems running smoothly.",
+      "Remote & on-site support for homes and businesses.",
+    color: "indigo",
     features: [
       "Remote assistance",
       "On-site support",
       "System maintenance",
-      "Technical troubleshooting",
     ],
-    color: "orange",
   },
   {
     icon: Code2,
     title: "Software Development",
     description:
-      "Modern web solutions and custom software services for your business.",
+      "Web & custom software solutions for your business.",
+    color: "blue",
     features: [
       "Website development",
       "Business web solutions",
-      "Software updates",
-      "User-friendly interfaces",
+      "Software improvements",
     ],
-    color: "pink",
     externalLink: "https://primeseosolutions.vercel.app/",
     externalLinkLabel: "Visit PrimeSEO Solutions",
   },
@@ -112,47 +104,42 @@ const services = [
 const benefits = [
   {
     icon: ShieldCheck,
-    title: "Quality Service",
-    description: "Solutions you can trust",
+    title: "Free Diagnostic",
+    subtitle: "Assessment",
+  },
+  {
+    icon: LockKeyhole,
+    title: "90-Day",
+    subtitle: "Warranty",
+  },
+  {
+    icon: Users,
+    title: "Certified",
+    subtitle: "Technicians",
   },
   {
     icon: Clock3,
-    title: "Fast Support",
-    description: "Efficient turnaround",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Expert Assistance",
-    description: "Professional technical help",
+    title: "Same-Day",
+    subtitle: "Service",
   },
   {
     icon: Wallet,
-    title: "Fair Pricing",
-    description: "Clear and competitive rates",
+    title: "Transparent",
+    subtitle: "Pricing",
+  },
+  {
+    icon: CheckCircle2,
+    title: "No Fix, No Fee",
+    subtitle: "Policy",
   },
 ]
 
-const colorStyles = {
-  blue: {
-    icon: "bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
-    glow: "hover:border-blue-200",
-  },
-  cyan: {
-    icon: "bg-cyan-100 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white",
-    glow: "hover:border-cyan-200",
-  },
-  green: {
-    icon: "bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white",
-    glow: "hover:border-green-200",
-  },
-  orange: {
-    icon: "bg-orange-100 text-orange-600 group-hover:bg-orange-500 group-hover:text-white",
-    glow: "hover:border-orange-200",
-  },
-  pink: {
-    icon: "bg-pink-100 text-pink-600 group-hover:bg-pink-600 group-hover:text-white",
-    glow: "hover:border-pink-200",
-  },
+const iconColors = {
+  blue: "bg-blue-100 text-blue-700",
+  sky: "bg-sky-100 text-sky-600",
+  navy: "bg-blue-900 text-white",
+  cyan: "bg-cyan-100 text-cyan-700",
+  indigo: "bg-indigo-100 text-indigo-700",
 }
 
 export default function ServicesPage() {
@@ -162,33 +149,30 @@ export default function ServicesPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/50 to-white">
-          <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-blue-100/60 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 left-0 h-72 w-72 rounded-full bg-cyan-100/40 blur-3xl" />
-
-          <div className="container relative mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-            <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div className="max-w-2xl">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm">
-                  <Zap className="h-4 w-4" />
-                  Professional Technology Services
-                </div>
-
-                <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                  Tech Services Made{" "}
-                  <span className="text-blue-600">Simple.</span>
-                </h1>
-
-                <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-                  From computer repairs and custom PC builds to networking and
-                  IT support, we provide practical technology solutions for
-                  individuals and businesses.
+        <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-r from-slate-50 via-white to-blue-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid min-h-[360px] items-center gap-8 lg:grid-cols-2">
+              {/* Hero Content */}
+              <div className="relative z-10 py-12 sm:py-16 lg:py-14">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
+                  Our Services
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-4">
+                <h1 className="max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-[42px]">
+                  Reliable IT Solutions
+                  <br />
+                  for <span className="text-blue-600">Home &amp; Business</span>
+                </h1>
+
+                <p className="mt-4 max-w-lg text-sm leading-7 text-slate-600 sm:text-base">
+                  We offer professional tech services to keep your systems
+                  running smoothly and efficiently.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
+                    className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition hover:bg-blue-700"
                   >
                     Get a Quote
                     <ArrowRight className="h-4 w-4" />
@@ -196,211 +180,119 @@ export default function ServicesPage() {
 
                   <Link
                     href="tel:+923069293923"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50"
+                    className="inline-flex items-center gap-2 rounded-lg border border-blue-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-blue-50"
                   >
                     <Phone className="h-4 w-4 text-blue-600" />
-                    Call for Support
+                    Call Us
                   </Link>
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-600">
-                  <span className="flex items-center gap-2">
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
+                  <span className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-blue-600" />
-                    Reliable solutions
+                    Reliable Service
                   </span>
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-blue-600" />
-                    Customer-focused support
+                    Professional Support
                   </span>
                 </div>
               </div>
 
-              {/* Technology Illustration */}
-              <div className="relative mx-auto w-full max-w-lg">
-                <div className="absolute inset-6 rounded-[2rem] bg-gradient-to-br from-blue-200 to-cyan-100 blur-2xl opacity-70" />
+              {/* Hero Image */}
+              <div className="relative min-h-[280px] overflow-hidden lg:min-h-[360px]">
+                <img
+                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
+                  alt="Modern professional office with workstations"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
 
-                <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-5 shadow-2xl shadow-blue-900/10 sm:p-7">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white">
-                        <Laptop className="h-6 w-6" />
-                      </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-blue-900/10" />
 
-                      <div>
-                        <p className="font-bold text-slate-900">
-                          MegaTech Solution
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          Your technology partner
-                        </p>
-                      </div>
-                    </div>
-
-                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 ring-4 ring-green-100" />
-                  </div>
-
-                  <div className="py-7">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
-                      Smart Technology
-                    </p>
-
-                    <h2 className="mt-2 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl">
-                      Everything your tech needs, in one place.
-                    </h2>
-
-                    <p className="mt-3 text-sm leading-6 text-slate-500">
-                      Expert assistance for your devices, systems, and
-                      business technology.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-2xl bg-blue-50 p-4">
-                      <Wrench className="h-6 w-6 text-blue-600" />
-                      <p className="mt-3 font-semibold text-slate-800">
-                        Repair
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        Fix it right
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-cyan-50 p-4">
-                      <Monitor className="h-6 w-6 text-cyan-600" />
-                      <p className="mt-3 font-semibold text-slate-800">
-                        Build
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        Built for you
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-violet-50 p-4">
-                      <Network className="h-6 w-6 text-violet-600" />
-                      <p className="mt-3 font-semibold text-slate-800">
-                        Connect
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        Stay connected
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-emerald-50 p-4">
-                      <Code2 className="h-6 w-6 text-emerald-600" />
-                      <p className="mt-3 font-semibold text-slate-800">
-                        Develop
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        Create solutions
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex items-center gap-3 rounded-2xl bg-slate-900 p-4 text-white">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500">
-                      <Headphones className="h-5 w-5" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/60 bg-white/90 p-4 shadow-lg backdrop-blur-sm sm:bottom-7 sm:left-7 sm:right-7">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white">
+                      <Headphones className="h-6 w-6" />
                     </div>
 
                     <div>
-                      <p className="text-sm font-semibold">
-                        Need technical help?
+                      <p className="font-bold text-slate-900">
+                        Your Trusted IT Partner
                       </p>
-                      <p className="mt-1 text-xs text-slate-300">
-                        We&apos;re ready to assist.
+                      <p className="mt-1 text-xs text-slate-600">
+                        Technology solutions for every need
                       </p>
                     </div>
-
-                    <ArrowRight className="ml-auto h-5 w-5 text-blue-300" />
                   </div>
-                </div>
-
-                <div className="absolute -left-4 top-1/3 hidden items-center gap-2 rounded-xl border border-slate-100 bg-white px-4 py-3 shadow-lg sm:flex">
-                  <CheckCircle2 className="h-5 w-5 text-green-500" />
-                  <span className="text-xs font-bold text-slate-700">
-                    Solutions that work
-                  </span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Cards */}
-        <section className="py-16 sm:py-20 lg:py-24">
+        {/* Services Grid */}
+        <section className="py-10 sm:py-14 lg:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto mb-12 max-w-2xl text-center">
-              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-700">
-                What We Do
-              </span>
+            <div className="mb-7">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
+                Our Services
+              </p>
 
-              <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                Our Technology Services
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+                Quality Services. Lasting Results.
               </h2>
 
-              <p className="mt-4 leading-7 text-slate-600">
-                Choose the service you need and get professional help from a
-                team focused on quality, reliability, and practical results.
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+                Explore our technology services, designed to help individuals
+                and businesses work smarter.
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => {
                 const Icon = service.icon
-                const styles = colorStyles[service.color]
 
                 return (
                   <article
                     key={service.title}
-                    className={`group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 sm:p-7 ${styles.glow}`}
+                    className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-900/5 sm:p-6"
                   >
                     <div
-                      className={`flex h-14 w-14 items-center justify-center rounded-2xl transition duration-300 ${styles.icon}`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-xl ${
+                        iconColors[service.color]
+                      } transition duration-300 group-hover:scale-105`}
                     >
-                      <Icon className="h-7 w-7" />
+                      <Icon className="h-5 w-5" />
                     </div>
 
-                    <h3 className="mt-5 text-xl font-bold text-slate-900">
+                    <h3 className="mt-4 text-base font-bold text-slate-900">
                       {service.title}
                     </h3>
 
-                    <p className="mt-3 min-h-[3.5rem] text-sm leading-6 text-slate-600">
+                    <p className="mt-2 text-sm leading-6 text-slate-500">
                       {service.description}
                     </p>
 
-                    <div className="my-5 h-px bg-slate-100" />
+                    <div className="mt-auto pt-4">
+                      <Link
+                        href="/contact#contact-form"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+                      >
+                        Learn More
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
 
-                    <ul className="space-y-3">
-                      {service.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-start gap-2.5 text-sm text-slate-600"
-                        >
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-auto pt-6">
                       {service.externalLink && (
                         <Link
                           href={service.externalLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mb-3 flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+                          className="mt-2 flex items-center gap-1.5 text-xs font-medium text-slate-500 transition hover:text-blue-600"
                         >
                           {service.externalLinkLabel}
-                          <ArrowRight className="h-4 w-4" />
+                          <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       )}
-
-                      <Link
-                        href="/contact#contact-form"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-slate-800 transition group-hover:text-blue-600"
-                      >
-                        Enquire About Service
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
                     </div>
                   </article>
                 )
@@ -409,53 +301,44 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="bg-slate-50 py-16 sm:py-20">
+        {/* Why Choose Us Banner */}
+        <section className="pb-12 sm:pb-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-7 shadow-sm sm:p-10 lg:p-12">
-              <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                <div>
-                  <span className="inline-flex rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-700">
-                    Why MegaTech?
-                  </span>
+            <div className="relative overflow-hidden rounded-xl border border-blue-800 bg-gradient-to-r from-[#082c60] via-[#103d79] to-[#082750] px-5 py-7 text-white shadow-lg sm:px-8 sm:py-8">
+              {/* Decorative background */}
+              <div className="pointer-events-none absolute -right-12 -top-20 h-52 w-52 rounded-full bg-blue-400/10 blur-2xl" />
 
-                  <h2 className="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-                    Technology support you can count on.
+              <div className="relative">
+                <div className="mb-7 text-center sm:text-left">
+                  <h2 className="text-lg font-bold sm:text-xl">
+                    Why Choose MegaTech Solution?
                   </h2>
 
-                  <p className="mt-4 leading-7 text-slate-600">
-                    We aim to make technology simpler with dependable service,
-                    clear communication, and solutions tailored to your needs.
+                  <p className="mt-1 text-xs leading-5 text-blue-100/80">
+                    Our commitment to quality, reliability, and customer
+                    satisfaction.
                   </p>
-
-                  <Link
-                    href="/contact"
-                    className="mt-7 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white shadow-md shadow-blue-600/20 transition hover:bg-blue-700"
-                  >
-                    Talk to Our Team
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 lg:grid-cols-6">
                   {benefits.map((benefit) => {
                     const Icon = benefit.icon
 
                     return (
                       <div
                         key={benefit.title}
-                        className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                        className="flex flex-col items-center text-center"
                       >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-blue-100 transition hover:bg-white/20">
                           <Icon className="h-5 w-5" />
                         </div>
 
-                        <h3 className="mt-4 font-bold text-slate-900">
+                        <p className="mt-3 text-xs font-bold text-white sm:text-sm">
                           {benefit.title}
-                        </h3>
+                        </p>
 
-                        <p className="mt-1 text-sm text-slate-500">
-                          {benefit.description}
+                        <p className="mt-1 text-xs text-blue-100/80">
+                          {benefit.subtitle}
                         </p>
                       </div>
                     )
@@ -466,54 +349,37 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Contact Banner */}
-        <section className="py-16 sm:py-20">
+        {/* Contact CTA */}
+        <section className="pb-14 sm:pb-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-center sm:px-12 sm:py-16">
-              <div className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-32 -left-10 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
-
-              <div className="relative mx-auto max-w-2xl">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500 text-white shadow-lg shadow-blue-500/30">
-                  <Headphones className="h-7 w-7" />
-                </div>
-
-                <h2 className="mt-6 text-3xl font-extrabold text-white sm:text-4xl">
-                  Let&apos;s Solve Your Tech Challenges
+            <div className="flex flex-col items-start justify-between gap-5 rounded-xl border border-slate-200 bg-slate-50 p-6 sm:flex-row sm:items-center sm:p-8">
+              <div>
+                <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                  Need Professional IT Assistance?
                 </h2>
 
-                <p className="mt-4 leading-7 text-slate-300">
-                  Need a repair, a new PC, networking, or IT assistance?
-                  Contact MegaTech Solution to discuss your requirements.
+                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                  Contact our team to discuss your requirements and find the
+                  right technology solution for you.
                 </p>
+              </div>
 
-                <div className="mt-8 flex flex-wrap justify-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3.5 font-semibold text-white transition hover:bg-blue-400"
-                  >
-                    Contact Us
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+              <div className="flex shrink-0 flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                >
+                  Contact Us
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
 
-                  <Link
-                    href="mailto:megatechsolution1348@hotmail.com"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
-                  >
-                    <Mail className="h-4 w-4" />
-                    Email Us
-                  </Link>
-                </div>
-
-                <p className="mt-6 text-sm text-slate-400">
-                  Call us:{" "}
-                  <Link
-                    href="tel:+923069293923"
-                    className="font-semibold text-blue-300 hover:text-white"
-                  >
-                    +92 306 9293923
-                  </Link>
-                </p>
+                <Link
+                  href="tel:+923069293923"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Us
+                </Link>
               </div>
             </div>
           </div>

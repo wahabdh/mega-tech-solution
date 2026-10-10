@@ -22,7 +22,7 @@ import {
   Send,
   CheckCircle,
   MessageSquare,
-  Linkedin,
+  Instagram,
   ArrowUpRight,
   BriefcaseBusiness,
   ShieldCheck,
@@ -409,16 +409,16 @@ export default function ContactPage() {
                 technology solutions for every customer.
               </p>
 
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-flex items-center gap-2 rounded-lg border border-sky-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all hover:border-blue-300 hover:text-blue-600"
-              >
-                <Linkedin className="h-4 w-4 text-blue-600" />
-                Follow Us on LinkedIn
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
+            ```jsx
+<a
+  href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`${member.name} on Instagram`}
+  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-pink-600 hover:text-white"
+>
+  <Instagram className="h-4 w-4" />
+</a>
 
             </div>
 

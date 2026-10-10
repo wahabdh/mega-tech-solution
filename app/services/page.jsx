@@ -132,10 +132,7 @@ const benefits = [
   },
 ]
 
-const colorStyles: Record<
-  string,
-  { icon: string; glow: string }
-> = {
+const colorStyles = {
   blue: {
     icon: "bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
     glow: "hover:border-blue-200",
@@ -218,7 +215,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* Decorative technology illustration */}
+              {/* Technology Illustration */}
               <div className="relative mx-auto w-full max-w-lg">
                 <div className="absolute inset-6 rounded-[2rem] bg-gradient-to-br from-blue-200 to-cyan-100 blur-2xl opacity-70" />
 
@@ -228,6 +225,7 @@ export default function ServicesPage() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white">
                         <Laptop className="h-6 w-6" />
                       </div>
+
                       <div>
                         <p className="font-bold text-slate-900">
                           MegaTech Solution
@@ -237,16 +235,19 @@ export default function ServicesPage() {
                         </p>
                       </div>
                     </div>
+
                     <span className="h-2.5 w-2.5 rounded-full bg-green-500 ring-4 ring-green-100" />
                   </div>
 
                   <div className="py-7">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
-                      Smart technology
+                      Smart Technology
                     </p>
+
                     <h2 className="mt-2 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl">
                       Everything your tech needs, in one place.
                     </h2>
+
                     <p className="mt-3 text-sm leading-6 text-slate-500">
                       Expert assistance for your devices, systems, and
                       business technology.
@@ -299,6 +300,7 @@ export default function ServicesPage() {
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500">
                       <Headphones className="h-5 w-5" />
                     </div>
+
                     <div>
                       <p className="text-sm font-semibold">
                         Need technical help?
@@ -307,6 +309,7 @@ export default function ServicesPage() {
                         We&apos;re ready to assist.
                       </p>
                     </div>
+
                     <ArrowRight className="ml-auto h-5 w-5 text-blue-300" />
                   </div>
                 </div>
@@ -322,7 +325,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Services Cards */}
         <section className="py-16 sm:py-20 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-12 max-w-2xl text-center">
@@ -406,7 +409,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Why Choose Us / Benefits */}
+        {/* Benefits Section */}
         <section className="bg-slate-50 py-16 sm:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-7 shadow-sm sm:p-10 lg:p-12">
@@ -446,9 +449,11 @@ export default function ServicesPage() {
                         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                           <Icon className="h-5 w-5" />
                         </div>
+
                         <h3 className="mt-4 font-bold text-slate-900">
                           {benefit.title}
                         </h3>
+
                         <p className="mt-1 text-sm text-slate-500">
                           {benefit.description}
                         </p>

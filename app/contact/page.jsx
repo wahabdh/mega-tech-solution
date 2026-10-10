@@ -479,16 +479,16 @@ export default function ContactPage() {
                         Chief Executive Officer
                       </div>
 
-                      <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`LinkedIn profile for ${member.name}`}
-                        className="inline-flex items-center gap-1.5 rounded-md bg-blue-50 px-2.5 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100"
-                      >
-                        <Linkedin className="h-3.5 w-3.5" />
-                        LinkedIn
-                      </a>
+                     ```jsx
+<a
+  href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`${member.name} on Instagram`}
+  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm backdrop-blur transition-all duration-300 hover:bg-pink-600 hover:text-white"
+>
+  <Instagram className="h-4 w-4" />
+</a>
 
                     </div>
 

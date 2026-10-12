@@ -208,23 +208,7 @@ export default function ServicesPage() {
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-blue-900/10" />
-
-                <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/60 bg-white/90 p-4 shadow-lg backdrop-blur-sm sm:bottom-7 sm:left-7 sm:right-7">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white">
-                      <Headphones className="h-6 w-6" />
-                    </div>
-
-                    <div>
-                      <p className="font-bold text-slate-900">
-                        Your Trusted IT Partner
-                      </p>
-                      <p className="mt-1 text-xs text-slate-600">
-                        Technology solutions for every need
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            
               </div>
             </div>
           </div>

@@ -202,7 +202,7 @@ export default function ServicesPage() {
               {/* Hero Image */}
               <div className="relative min-h-[280px] overflow-hidden lg:min-h-[360px]">
                 <img
-                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
+                  src="/images/Gaming PC Setup.jpg"
                   alt="Modern professional office with workstations"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

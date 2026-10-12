@@ -215,7 +215,13 @@ export default function ServicesPage() {
                       <Headphones className="h-6 w-6" />
                     </div>
 
-                   
+                    <div>
+                      <p className="font-bold text-slate-900">
+                        Your Trusted IT Partner
+                      </p>
+                      <p className="mt-1 text-xs text-slate-600">
+                        Technology solutions for every need
+                      </p>
                     </div>
                   </div>
                 </div>

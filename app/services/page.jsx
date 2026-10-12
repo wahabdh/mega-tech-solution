@@ -179,7 +179,7 @@ export default function ServicesPage() {
                   </Link>
 
                   <Link
-                    href="tel:+923069293923"
+                    href="tel:+923104601236"
                     className="inline-flex items-center gap-2 rounded-lg border border-blue-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-blue-50"
                   >
                     <Phone className="h-4 w-4 text-blue-600" />

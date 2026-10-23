@@ -2,27 +2,19 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, Star, Check, ArrowUpRight } from "lucide-react"
-import { products, categories } from "@/lib/products-data"
+import { products } from "@/lib/products-data"
 import { useCart } from "@/context/cart-context"
 import { toast } from "sonner"
 
 export function ProductsSection() {
-  const [activeCategory, setActiveCategory] = useState("all")
   const { addItem, items } = useCart()
 
+  // Show only the first 8 products on the homepage.
   const homepageProducts = products.slice(0, 8)
-
-const filteredProducts =
-  activeCategory === "all"
-    ? homepageProducts
-    : homepageProducts.filter(
-        (product) => product.category === activeCategory
-      )
 
   const formatPrice = (price) =>
     Number(price || 0).toLocaleString("en-PK")
@@ -57,28 +49,10 @@ const filteredProducts =
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="mt-8 flex flex-wrap justify-center gap-2">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              type="button"
-              variant={
-                activeCategory === category.id ? "default" : "outline"
-              }
-              size="sm"
-              onClick={() => setActiveCategory(category.id)}
-              className="rounded-full"
-            >
-              {category.name}
-            </Button>
-          ))}
-        </div>
-
-        {/* Products Grid */}
-        {filteredProducts.length > 0 ? (
+        {/* Products Grid - First 8 Products Only */}
+        {homepageProducts.length > 0 ? (
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredProducts.map((product) => (
+            {homepageProducts.map((product) => (
               <Card
                 key={product.id}
                 className="group flex h-full flex-col overflow-hidden border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -149,7 +123,9 @@ const filteredProducts =
                     )}
                   </div>
 
-                  {Number(product.originalPrice) > Number(product.price) && (
+                  {/* Savings */}
+                  {Number(product.originalPrice) >
+                    Number(product.price) && (
                     <p className="mt-1 text-xs font-medium text-green-600">
                       Save Rs.{" "}
                       {formatPrice(
@@ -166,7 +142,9 @@ const filteredProducts =
                     type="button"
                     className="w-full gap-2"
                     size="sm"
-                    variant={isInCart(product.id) ? "secondary" : "default"}
+                    variant={
+                      isInCart(product.id) ? "secondary" : "default"
+                    }
                     onClick={() => handleAddToCart(product)}
                   >
                     {isInCart(product.id) ? (
@@ -200,15 +178,8 @@ const filteredProducts =
         ) : (
           <div className="mt-10 rounded-xl border border-dashed p-10 text-center">
             <p className="font-medium text-foreground">
-              No products found in this category.
+              No products are currently available.
             </p>
-            <Button
-              variant="outline"
-              className="mt-4"
-              onClick={() => setActiveCategory("all")}
-            >
-              View All Products
-            </Button>
           </div>
         )}
 

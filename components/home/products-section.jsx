@@ -15,10 +15,14 @@ export function ProductsSection() {
   const [activeCategory, setActiveCategory] = useState("all")
   const { addItem, items } = useCart()
 
-  const filteredProducts =
-    activeCategory === "all"
-      ? products
-      : products.filter((product) => product.category === activeCategory)
+  const homepageProducts = products.slice(0, 8)
+
+const filteredProducts =
+  activeCategory === "all"
+    ? homepageProducts
+    : homepageProducts.filter(
+        (product) => product.category === activeCategory
+      )
 
   const formatPrice = (price) =>
     Number(price || 0).toLocaleString("en-PK")
